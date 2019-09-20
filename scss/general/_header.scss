@@ -1,0 +1,48 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5.55% 6.25% 0 0;
+    margin-bottom: 12%;
+
+    .logo_link {
+        display: block;
+        width: 50.7%;
+        margin-left: 12px;
+    }
+}
+
+.menu_checkbox {
+
+    &_input {
+        display: none;
+
+        &:checked {
+
+            & + .left {
+
+                .close_menu {
+                    display: block;
+                }
+
+                .open_menu {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &_label {
+        display: block;
+        width: 3.9%;
+        cursor: pointer;
+
+        .close_menu {
+            display: none;
+        }
+
+        &:hover svg {
+            fill: $red_1;
+        }
+    }
+}

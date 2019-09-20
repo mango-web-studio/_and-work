@@ -6,12 +6,12 @@
 	font: #{$font_size*100/$site_width}vw/#{$line_height*100/$site_width}vw $font_family;
 }
 
-@mixin background($url, $repeat: no-repeat, $top: top, $left: left, $size: cover, $color: transparent) {
+@mixin background($url, $top: top, $left: left, $size: cover, $color: transparent, $repeat: no-repeat) {
 	background-image: $url;
-	background-repeat: $repeat;
 	background-position: $top $left;
 	background-size: $size;
 	background-color: $color;
+	background-repeat: $repeat;
 }
 
 @mixin triangle_bottom($width: 5px, $height: 5px, $color: #000000, $position: absolute, $top: 0, $right: 0) {

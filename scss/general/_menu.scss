@@ -1,0 +1,32 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+    margin-left: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+
+    &_link {
+        @include font(22px, 24px, 'Roboto-Light');
+
+        color: $black_1;
+
+        &:hover {
+            color: $red_1;
+            text-decoration: underline;
+        }
+    }
+
+    &_social_link {
+        @include font(22px, 24px, 'Roboto-Light');
+
+        color: $black_1;
+
+        &:hover {
+            color: $red_1;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,6 +1,14 @@
+// Template
 @import "fonts.scss";
 @import "variables.scss";
 @import "extends.scss";
 @import "mixins.scss";
 @import "reset.scss";
-@import "header.scss";
+// GENERAL
+@import "general/main";
+@import "general/right";
+@import "general/left";
+// Header
+@import "general/header";
+// Menu
+@import "general/menu";
