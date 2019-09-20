@@ -1,0 +1,24 @@
+/* GLOBAL */
+@media only screen and (min-width:320px) and (max-width: 600px) {
+}
+@media only screen and (min-width:320px) {
+}
+:root {
+	font-size: 10px;
+}
+* {
+	box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+}
+ul, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
