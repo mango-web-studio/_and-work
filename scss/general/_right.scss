@@ -19,3 +19,13 @@
         }
     }
 }
+
+.menu_checkbox_input {
+
+    &:checked {
+
+        & ~ .right {
+            background-image: url(../img/main/main_right__menu.png);
+        }
+    }
+}

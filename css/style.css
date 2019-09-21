@@ -123,6 +123,10 @@ input {
   height: 100%;
 }
 
+.menu_checkbox_input:checked ~ .right {
+  background-image: url(../img/main/main_right__menu.png);
+}
+
 .left {
   position: relative;
   display: flex;
@@ -235,7 +239,7 @@ input {
   margin-left: 40px;
   opacity: 0;
   visibility: hidden;
-  transition: 1s;
+  transition: opacity 1s;
 }
 
 .menu_link {
