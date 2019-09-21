@@ -129,35 +129,29 @@ input {
 
 .left {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   width: 50%;
   height: 100%;
-  padding-bottom: 7%;
   background-color: #fff;
 }
 
 .left_marquee {
+  font: 2.2rem/3rem "Roboto-Regular";
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 3.6%;
-}
-
-.left_marquee_address {
-  font: 2.2rem/2.4rem "Roboto-Regular";
-  height: 100%;
-  width: 100%;
+  top: calc( 100% - 3.6%);
+  left: 100%;
+  height: 3.6%;
+  width: 100vh;
   color: #f00;
   transform: rotate(-90deg);
-  white-space: nowrap;
+  transform-origin: bottom left;
+  z-index: 2;
 }
 
 .button_book_now {
+  position: absolute;
+  left: 40px;
+  bottom: 18.9%;
   width: 30%;
-  margin-left: 40px;
   z-index: 1;
 }
 
@@ -182,21 +176,15 @@ input {
   fill: #f00;
 }
 
-.menu_checkbox_input:checked + .left {
-  z-index: 1;
-}
-
-.menu_checkbox_input:checked + .left .menu {
-  opacity: 1;
-  visibility: visible;
+.menu_checkbox:checked + .left .left_marquee {
+  position: fixed;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5.55% 6.25% 0 0;
-  margin-bottom: 12%;
+  padding: 5.56% 6.25% 0 0;
 }
 
 .header .logo_link {
@@ -207,6 +195,13 @@ input {
 
 .menu_checkbox_input {
   display: none;
+}
+
+.menu_checkbox_input:checked + .left .header {
+  position: fixed;
+  width: 50%;
+  padding: 2.78% 3.125% 0 0;
+  z-index: 2;
 }
 
 .menu_checkbox_input:checked + .left .close_menu {
@@ -232,14 +227,26 @@ input {
 }
 
 .menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+
+.menu_item_social_wrap {
+  position: absolute;
+  top: 18%;
+  left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 40%;
-  margin-left: 40px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s;
+  height: 40.5%;
 }
 
 .menu_link {
@@ -260,4 +267,9 @@ input {
 .menu_social_link:hover {
   color: #f00;
   text-decoration: underline;
+}
+
+.menu_checkbox_input:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
 }
