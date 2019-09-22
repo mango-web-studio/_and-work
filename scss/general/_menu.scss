@@ -9,10 +9,8 @@
     height: 100%;
     width: 50%;
     background-color: $white_1;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s;
     z-index: 1;
+    transition: 0.5s;
 
     &_item_social_wrap {
         position: absolute;
@@ -56,4 +54,16 @@
             visibility: visible;
         }
     }
+
+    &:not(:checked) {
+
+        & ~ .menu {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.language_select {
+    margin-top: 8px;
 }

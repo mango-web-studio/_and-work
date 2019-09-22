@@ -99,8 +99,8 @@ input {
 }
 
 .right {
-  background-image: url("../img/main/main_right.png");
-  background-position: center right;
+  background-image: url("../img/main/main_right.gif");
+  background-position: center center;
   background-size: cover;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -124,7 +124,7 @@ input {
 }
 
 .menu_checkbox_input:checked ~ .right {
-  background-image: url(../img/main/main_right__menu.png);
+  background-image: url(../img/main/main_right__menu.gif);
 }
 
 .left {
@@ -157,10 +157,13 @@ input {
 
 .button_book_now path {
   fill: #f00;
+  stroke: #f00;
+  transition: 0.3s;
 }
 
 .button_book_now path:last-child {
   fill: #fff;
+  stroke: #fff;
 }
 
 .button_book_now:hover {
@@ -169,11 +172,11 @@ input {
 
 .button_book_now:hover path {
   fill: #fff;
-  stroke: #f00;
 }
 
 .button_book_now:hover path:last-child {
   fill: #f00;
+  stroke: #f00;
 }
 
 .menu_checkbox:checked + .left .left_marquee {
@@ -184,7 +187,10 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5.56% 6.25% 0 0;
+  position: fixed;
+  width: 50%;
+  padding: 2.78% 3.125% 0 0;
+  z-index: 2;
 }
 
 .header .logo_link {
@@ -195,13 +201,6 @@ input {
 
 .menu_checkbox_input {
   display: none;
-}
-
-.menu_checkbox_input:checked + .left .header {
-  position: fixed;
-  width: 50%;
-  padding: 2.78% 3.125% 0 0;
-  z-index: 2;
 }
 
 .menu_checkbox_input:checked + .left .close_menu {
@@ -233,10 +232,8 @@ input {
   height: 100%;
   width: 50%;
   background-color: #fff;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s;
   z-index: 1;
+  transition: 0.5s;
 }
 
 .menu_item_social_wrap {
@@ -272,4 +269,13 @@ input {
 .menu_checkbox_input:checked ~ .menu {
   opacity: 1;
   visibility: visible;
+}
+
+.menu_checkbox_input:not(:checked) ~ .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.language_select {
+  margin-top: 8px;
 }

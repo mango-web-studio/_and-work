@@ -30,24 +30,27 @@
     width: 30%;
     // margin-left: 40px;
     z-index: 1;
-
+    
     path {
         fill: $red_1;
+        stroke: $red_1;
+        transition: 0.3s;
         
         &:last-child {
             fill: $white_1;
+            stroke: $white_1;
         }
     }
-
+    
     &:hover {
         cursor: pointer;
-    
+        
         path {
             fill: $white_1;
-            stroke: $red_1;
             
             &:last-child {
                 fill: $red_1;
+                stroke: $red_1;
             }
         }
     }
