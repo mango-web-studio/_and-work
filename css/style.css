@@ -276,6 +276,70 @@ input {
   visibility: hidden;
 }
 
-.language_select {
-  margin-top: 8px;
+.select_wrap {
+  position: relative;
+}
+
+.select_wrap select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
+  /*style the items (options), including the selected item:*/
+}
+
+.select-items div {
+  font: 1.8rem/2rem "Roboto-Light";
+  padding: 10%;
+  border: 1px solid #000;
+  border-top: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items div:hover {
+  background-color: #ccc;
+}
+
+.select-selected {
+  font: 1.8rem/2rem "Roboto-Light";
+  position: relative;
+  padding: 10%;
+  border: 1px solid #000;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 5px;
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+}
+
+.select-selected::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 25px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid transparent;
+  border-color: transparent #000 #000 transparent;
+  transform-origin: center center;
+  transform: translateY(-75%) rotate(45deg);
+  transition: 0.5s;
+}
+
+.select-selected.select-arrow-active::after {
+  transform: translateY(-25%) rotate(-135deg);
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
 }
