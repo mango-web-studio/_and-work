@@ -1,8 +1,4 @@
 .menu {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-    // margin-left: 40px;
     position: fixed;
     left: 0;
     top: 0;
@@ -49,7 +45,7 @@
 
     &:checked {
 
-        & ~ .menu {
+        & + .left .menu {
             opacity: 1;
             visibility: visible;
         }
@@ -57,7 +53,7 @@
 
     &:not(:checked) {
 
-        & ~ .menu {
+        & + .left .menu {
             opacity: 0;
             visibility: hidden;
         }

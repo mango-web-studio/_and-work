@@ -5,10 +5,12 @@
 @import "mixins.scss";
 @import "reset.scss";
 // GENERAL
-@import "general/container";
-@import "general/right";
-@import "general/left";
-// Header
-@import "general/header";
-// Menu
-@import "general/menu";
+@import "general/container.scss";
+@import "general/right.scss";
+@import "general/left.scss";
+// GENERAL Header
+@import "general/header.scss";
+// GENERAL Menu
+@import "general/menu.scss";
+// Price
+@import "price_portfolio/price.scss";

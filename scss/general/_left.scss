@@ -1,8 +1,4 @@
 .left {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
-    // padding-bottom: 7%;
     position: relative;
     width: 50%;
     height: 100%;
@@ -11,9 +7,9 @@
     &_marquee {
         @include font(22px, 26px, 'Roboto-Regular');
 
-        position: absolute;
+        position: fixed;
         bottom: 0;
-        left: 100%;
+        left: 50%;
         width: 100vh;
         color: $red_1;
         transform: rotate(-90deg);
@@ -23,12 +19,14 @@
 }
 
 .button_book_now {
-    position: absolute;
-    left: 40px;
-    bottom: 18.9%;
-    width: 30%;
-    // margin-left: 40px;
-    z-index: 1;
+
+    &_link {
+        position: absolute;
+        left: 40px;
+        bottom: 18.9%;
+        width: 30%;
+        z-index: 1;
+    }
     
     path {
         fill: $red_1;
@@ -55,15 +53,15 @@
     }
 }
 
-.menu_checkbox {
+// .menu_checkbox {
     
-    &:checked {
+//     &:checked {
 
-        & + .left {
+//         & + .left {
 
-            .left_marquee {
-                position: fixed;
-            }
-        }
-    }
-}
+//             .left_marquee {
+//                 position: fixed;
+//             }
+//         }
+//     }
+// }

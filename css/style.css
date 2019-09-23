@@ -74,6 +74,7 @@ input {
   height: 1px;
   background-color: #f00;
   z-index: 1;
+  pointer-events: none;
 }
 
 .red_line_hrzntl:first-child {
@@ -92,6 +93,7 @@ input {
   height: 100%;
   background-color: #f00;
   z-index: 1;
+  pointer-events: none;
 }
 
 .red_line_vrtcl + .red_line_vrtcl {
@@ -99,7 +101,7 @@ input {
 }
 
 .right {
-  background-image: url("../img/main/main_right.gif");
+  background-image: url("../img/home/home_right.gif");
   background-position: center center;
   background-size: cover;
   background-color: transparent;
@@ -110,9 +112,9 @@ input {
 }
 
 .right_marquee {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   width: 22.5%;
   height: 100%;
 }
@@ -124,7 +126,7 @@ input {
 }
 
 .menu_checkbox_input:checked ~ .right {
-  background-image: url(../img/main/main_right__menu.gif);
+  background-image: url(../img/home/home_right__menu.gif);
 }
 
 .left {
@@ -136,9 +138,9 @@ input {
 
 .left_marquee {
   font: 2.2rem/2.6rem "Roboto-Regular";
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 100%;
+  left: 50%;
   width: 100vh;
   color: #f00;
   transform: rotate(-90deg);
@@ -146,7 +148,7 @@ input {
   z-index: 2;
 }
 
-.button_book_now {
+.button_book_now_link {
   position: absolute;
   left: 40px;
   bottom: 18.9%;
@@ -176,10 +178,6 @@ input {
 .button_book_now:hover path:last-child {
   fill: #f00;
   stroke: #f00;
-}
-
-.menu_checkbox:checked + .left .left_marquee {
-  position: fixed;
 }
 
 .header {
@@ -265,12 +263,12 @@ input {
   text-decoration: underline;
 }
 
-.menu_checkbox_input:checked ~ .menu {
+.menu_checkbox_input:checked + .left .menu {
   opacity: 1;
   visibility: visible;
 }
 
-.menu_checkbox_input:not(:checked) ~ .menu {
+.menu_checkbox_input:not(:checked) + .left .menu {
   opacity: 0;
   visibility: hidden;
 }
@@ -342,4 +340,8 @@ input {
 /*hide the items when the select box is closed:*/
 .select-hide {
   display: none;
+}
+
+.price .left {
+  z-index: 1;
 }

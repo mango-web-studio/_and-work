@@ -1,14 +1,14 @@
 .right {
-    @include background(url("../img/main/main_right.gif"), center, center);
+    @include background(url("../img/home/home_right.gif"), center, center);
 
     position: relative;
     width: 50%;
     height: 100%;
 
     &_marquee {
-        position: absolute;
+        position: fixed;
         top: 0;
-        left: 0;
+        left: 50%;
         width: 22.5%;
         height: 100%;
 
@@ -25,7 +25,7 @@
     &:checked {
 
         & ~ .right {
-            background-image: url(../img/main/main_right__menu.gif);
+            background-image: url(../img/home/home_right__menu.gif);
         }
     }
 }
