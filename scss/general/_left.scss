@@ -9,12 +9,11 @@
     background-color: $white_1;
 
     &_marquee {
-        @include font(22px, 30px, 'Roboto-Regular');
+        @include font(22px, 26px, 'Roboto-Regular');
 
         position: absolute;
-        top: calc( 100% - 3.6% );
+        bottom: 0;
         left: 100%;
-        height: 3.6%;
         width: 100vh;
         color: $red_1;
         transform: rotate(-90deg);
