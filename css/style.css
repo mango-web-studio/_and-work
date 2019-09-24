@@ -22,6 +22,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url("../fonts/Roboto-Medium/Roboto-Medium.eot");
+  src: url("../fonts/Roboto-Medium/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium/Roboto-Medium.svg#Roboto-Medium") format("svg"), url("../fonts/Roboto-Medium/Roboto-Medium.ttf") format("truetype"), url("../fonts/Roboto-Medium/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium/Roboto-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 10px;
 }
@@ -115,8 +123,9 @@ input {
   position: fixed;
   top: 0;
   left: 50%;
-  width: 22.5%;
+  width: 11.25%;
   height: 100%;
+  pointer-events: none;
 }
 
 .right_marquee_svg {
@@ -146,6 +155,7 @@ input {
   transform: rotate(-90deg);
   transform-origin: bottom left;
   z-index: 2;
+  pointer-events: none;
 }
 
 .button_book_now_link {
@@ -200,11 +210,11 @@ input {
   display: none;
 }
 
-.menu_checkbox_input:checked + .left .close_menu {
+.menu_checkbox_input:checked ~ .left .close_menu {
   display: block;
 }
 
-.menu_checkbox_input:checked + .left .open_menu {
+.menu_checkbox_input:checked ~ .left .open_menu {
   display: none;
 }
 
@@ -231,6 +241,8 @@ input {
   background-color: #fff;
   z-index: 1;
   transition: 0.5s;
+  /*style items (options):*/
+  /*hide the items when the select box is closed:*/
 }
 
 .menu_item_social_wrap {
@@ -263,27 +275,17 @@ input {
   text-decoration: underline;
 }
 
-.menu_checkbox_input:checked + .left .menu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.menu_checkbox_input:not(:checked) + .left .menu {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.select_wrap {
+.menu .select_wrap {
   position: relative;
 }
 
-.select_wrap select {
+.menu .select_wrap select {
   display: none;
   /*hide original SELECT element:*/
 }
 
-/*style items (options):*/
-.select-items {
+.menu .select-items {
+  font: 1.8rem/2rem "Roboto-Light";
   position: absolute;
   top: 100%;
   left: 0;
@@ -295,18 +297,18 @@ input {
   /*style the items (options), including the selected item:*/
 }
 
-.select-items div {
+.menu .select-items div {
   font: 1.8rem/2rem "Roboto-Light";
   padding: 10%;
   cursor: pointer;
   user-select: none;
 }
 
-.select-items div:hover {
+.menu .select-items div:hover {
   background-color: #ccc;
 }
 
-.select-selected {
+.menu .select-selected {
   font: 1.8rem/2rem "Roboto-Light";
   position: relative;
   padding: 10%;
@@ -319,7 +321,7 @@ input {
   /*point the arrow upwards when the select box is open (active):*/
 }
 
-.select-selected::after {
+.menu .select-selected::after {
   position: absolute;
   content: "";
   top: 50%;
@@ -333,15 +335,244 @@ input {
   transition: 0.5s;
 }
 
-.select-selected.select-arrow-active::after {
+.menu .select-selected.select-arrow-active::after {
   transform: translateY(-25%) rotate(-135deg);
 }
 
-/*hide the items when the select box is closed:*/
-.select-hide {
+.menu .select-hide {
   display: none;
+}
+
+.menu_checkbox_input:checked + .left .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu_checkbox_input:not(:checked) ~ .left .menu {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .price .left {
   z-index: 1;
+}
+
+.price .logo_svg:hover {
+  fill: #f00;
+}
+
+.bottom_marquee {
+  font: 2.2rem/4.2rem "Roboto-Regular";
+  position: fixed;
+  left: 0;
+  bottom: 25px;
+  background-color: #fff;
+  border: 1px solid #f00;
+  border-left: 0;
+  border-right: 0;
+  color: #f00;
+  z-index: 2;
+}
+
+.meeting_room_radio {
+  display: none;
+}
+
+.meeting_room_radio_1:checked ~ .right .meeting_room_1 {
+  display: block;
+}
+
+.meeting_room_radio_2:checked ~ .right .meeting_room_2 {
+  display: block;
+}
+
+.meeting_room_radio_3:checked ~ .right .meeting_room_3 {
+  display: block;
+}
+
+.meeting_room_radio_4:checked ~ .right .meeting_room_4 {
+  display: block;
+}
+
+.meeting_room_description_container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.meeting_room_description_container_inner {
+  position: relative;
+  height: 100%;
+  width: calc( 100% + 17px);
+  overflow-y: scroll;
+}
+
+.meeting_room_description {
+  position: absolute;
+  width: calc(100% - 17px);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 0 5.556%;
+}
+
+.meeting_room_description_outer {
+  position: relative;
+  height: 100%;
+}
+
+.meeting_room_description_title {
+  font: 1.8rem/2.2rem "Roboto-Regular";
+  letter-spacing: 2px;
+  margin-bottom: 7.03%;
+}
+
+.meeting_room_description_title:first-child {
+  text-decoration: underline #f00;
+}
+
+.meeting_room_description_label {
+  cursor: pointer;
+}
+
+.meeting_room_description_paragraph {
+  font: 1.8rem/2.2rem "Roboto-Light";
+  letter-spacing: 2px;
+  margin-bottom: 7.03%;
+}
+
+.meeting_room_description_item {
+  font: 1.8rem/2.2rem "Roboto-Light";
+  letter-spacing: 2px;
+}
+
+.meeting_room_description_tarrif_plan {
+  font: 1.8rem/2.2rem "Roboto-Light";
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /*style items (options):*/
+  /*hide the items when the select box is closed:*/
+}
+
+.meeting_room_description_tarrif_plan .title {
+  font: 1.8rem/2.2rem "Roboto-Regular";
+  width: 25%;
+}
+
+.meeting_room_description_tarrif_plan .select_wrap {
+  position: relative;
+}
+
+.meeting_room_description_tarrif_plan .select_wrap select {
+  display: none;
+  /*hide original SELECT element:*/
+}
+
+.meeting_room_description_tarrif_plan .select-items {
+  font: 1.8rem/2rem "Roboto-Light";
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  top: auto;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-bottom: 0;
+  z-index: 1;
+  /*style the items (options), including the selected item:*/
+}
+
+.meeting_room_description_tarrif_plan .select-items div {
+  font: 1.8rem/2rem "Roboto-Light";
+  padding: 10%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.meeting_room_description_tarrif_plan .select-items div:hover {
+  background-color: #ccc;
+}
+
+.meeting_room_description_tarrif_plan .select-selected {
+  font: 1.8rem/2rem "Roboto-Light";
+  position: relative;
+  width: 140px;
+  padding: 10%;
+  border: 1px solid #000;
+  border-bottom: 0;
+  background-color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+}
+
+.meeting_room_description_tarrif_plan .select-selected::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 25px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid transparent;
+  border-color: transparent #000 #000 transparent;
+  transform-origin: center center;
+  transform: translateY(-25%) rotate(-135deg);
+  transition: 0.5s;
+}
+
+.meeting_room_description_tarrif_plan .select-selected.select-arrow-active::after {
+  transform: translateY(-75%) rotate(45deg);
+}
+
+.meeting_room_description_tarrif_plan .select-hide {
+  display: none;
+}
+
+.meeting_room_description_tarrif_plan .tarrif_input {
+  font: 1.8rem/2rem "Roboto-Medium";
+  position: relative;
+  width: 140px;
+  padding: 2.19%;
+  border: 1px solid #000;
+  background-color: #fff;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.meeting_room_description_tarrif .tarrif_form_submit {
+  font: 1.8rem/4.6rem "Roboto-Regular";
+  display: block;
+  margin: 12px 0 0 auto;
+  color: #fff;
+  background-color: #f00;
+  border: 1px solid #f00;
+  width: 28.13%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.meeting_room_description_tarrif .tarrif_form_submit:hover {
+  color: #f00;
+  background-color: #fff;
+  border: 1px solid #f00;
+}
+
+.meeting_room_photo {
+  display: none;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.meeting_room_list {
+  height: 100%;
+  width: calc( 100% + 17px);
+  overflow-y: scroll;
+}
+
+.meeting_room_img {
+  width: 100%;
 }

@@ -9,8 +9,9 @@
         position: fixed;
         top: 0;
         left: 50%;
-        width: 22.5%;
+        width: 11.25%;
         height: 100%;
+        pointer-events: none;
 
         &_svg {
             fill: $red_1;

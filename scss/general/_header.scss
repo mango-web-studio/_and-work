@@ -21,7 +21,7 @@
 
         &:checked {
 
-            & + .left {
+            & ~ .left {
 
                 .close_menu {
                     display: block;
