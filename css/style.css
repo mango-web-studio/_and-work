@@ -423,7 +423,7 @@ input {
 .meeting_room_description_title {
   font: 1.8rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  margin-bottom: 7.03%;
+  margin-bottom: 2.5em;
 }
 
 .meeting_room_description_title:first-child {
@@ -437,7 +437,7 @@ input {
 .meeting_room_description_paragraph {
   font: 1.8rem/2.2rem "Roboto-Light";
   letter-spacing: 2px;
-  margin-bottom: 7.03%;
+  margin-bottom: 2.5em;
 }
 
 .meeting_room_description_item {
