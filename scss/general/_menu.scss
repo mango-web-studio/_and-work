@@ -23,7 +23,8 @@
 
         color: $black_1;
 
-        &:hover {
+        &:hover,
+        &_active {
             color: $red_1;
             text-decoration: underline;
         }

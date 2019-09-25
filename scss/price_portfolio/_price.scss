@@ -3,27 +3,6 @@
     .left {
         z-index: 1;
     }
-
-    .logo_svg {
-
-        &:hover {
-            fill: $red_1;
-        }
-    }
-}
-
-.bottom_marquee {
-    @include font(22px, 42px, 'Roboto-Regular');
-
-    position: fixed;
-    left: 0;
-    bottom: 25px;
-    background-color: $white_1;
-    border: 1px solid $red_1;
-    border-left: 0;
-    border-right: 0;
-    color: $red_1;
-    z-index: 2;
 }
 
 .meeting_room {
@@ -78,7 +57,7 @@
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        padding: 0 5.556%;
+        padding: 0 5.43%;
 
         &_outer {
             position: relative;
@@ -215,6 +194,10 @@
                     background-color: $white_1;
                     white-space: nowrap;
                     user-select: none;
+
+                    &::placeholder {
+                        color: $black_1;
+                    }
                 }
                 
             }

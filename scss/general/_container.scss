@@ -44,3 +44,17 @@
         left: 33.3%;
     }
 }
+
+.bottom_marquee {
+    @include font(22px, 42px, 'Roboto-Regular');
+
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+    background-color: $white_1;
+    border: 1px solid $red_1;
+    border-left: 0;
+    border-right: 0;
+    color: $red_1;
+    z-index: 2;
+}

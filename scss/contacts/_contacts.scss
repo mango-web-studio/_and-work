@@ -1,0 +1,51 @@
+.contacts {
+
+    &_content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 87.5%;
+        padding: 50px 40px;
+        background-color: $white_1;
+        z-index: 1;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 0;
+            border: 1px solid $red_1;
+            background-color: #fff;
+            z-index: -1;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: -14px;
+            bottom: -23px;
+            border: 1px solid $red_1;
+            background-color: #fff;
+            z-index: -2;
+        }
+    }
+
+    &_title {
+        @include font(22px, 26px, 'Roboto-Bold');
+
+        letter-spacing: 2px;
+        margin-bottom: 1.4em;
+    }
+    
+    &_description {
+        @include font(18px, 22px, 'Roboto-Light');
+        
+        letter-spacing: 2px;
+        margin-bottom: 3em;
+    }
+}

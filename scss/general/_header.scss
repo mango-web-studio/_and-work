@@ -1,3 +1,13 @@
+.home {
+    
+    .logo_svg {
+
+        &:hover {
+            fill: $black_1;
+        }
+    }
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,6 +21,14 @@
         display: block;
         width: 50.7%;
         margin-left: 12px;
+    }
+
+}
+
+.logo_svg {
+
+    &:hover {
+        fill: $red_1;
     }
 }
 

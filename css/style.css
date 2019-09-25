@@ -30,6 +30,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("../fonts/Roboto-Bold/Roboto-Bold.eot");
+  src: url("../fonts/Roboto-Bold/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold/Roboto-Bold.svg#Roboto-Bold") format("svg"), url("../fonts/Roboto-Bold/Roboto-Bold.ttf") format("truetype"), url("../fonts/Roboto-Bold/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold/Roboto-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 10px;
 }
@@ -108,12 +116,41 @@ input {
   left: 33.3%;
 }
 
+.bottom_marquee {
+  font: 2.2rem/4.2rem "Roboto-Regular";
+  position: fixed;
+  left: 0;
+  bottom: 25px;
+  background-color: #fff;
+  border: 1px solid #f00;
+  border-left: 0;
+  border-right: 0;
+  color: #f00;
+  z-index: 2;
+}
+
+.home .right_bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .right_bg_bg.menu_open {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .menu_checkbox_input:checked ~ .right .right_bg {
+  display: none;
+}
+
+.home .menu_checkbox_input:checked ~ .right .right_bg.menu_open {
+  display: block;
+}
+
 .right {
-  background-image: url("../img/home/home_right.gif");
-  background-position: center center;
-  background-size: cover;
-  background-color: transparent;
-  background-repeat: no-repeat;
   position: relative;
   width: 50%;
   height: 100%;
@@ -132,10 +169,6 @@ input {
   fill: #f00;
   width: 100%;
   height: 100%;
-}
-
-.menu_checkbox_input:checked ~ .right {
-  background-image: url(../img/home/home_right__menu.gif);
 }
 
 .left {
@@ -190,6 +223,10 @@ input {
   stroke: #f00;
 }
 
+.home .logo_svg:hover {
+  fill: #000;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -204,6 +241,10 @@ input {
   display: block;
   width: 50.7%;
   margin-left: 12px;
+}
+
+.logo_svg:hover {
+  fill: #f00;
 }
 
 .menu_checkbox_input {
@@ -260,7 +301,7 @@ input {
   color: #000;
 }
 
-.menu_link:hover {
+.menu_link:hover, .menu_link_active {
   color: #f00;
   text-decoration: underline;
 }
@@ -357,23 +398,6 @@ input {
   z-index: 1;
 }
 
-.price .logo_svg:hover {
-  fill: #f00;
-}
-
-.bottom_marquee {
-  font: 2.2rem/4.2rem "Roboto-Regular";
-  position: fixed;
-  left: 0;
-  bottom: 25px;
-  background-color: #fff;
-  border: 1px solid #f00;
-  border-left: 0;
-  border-right: 0;
-  color: #f00;
-  z-index: 2;
-}
-
 .meeting_room_radio {
   display: none;
 }
@@ -412,7 +436,7 @@ input {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  padding: 0 5.556%;
+  padding: 0 5.43%;
 }
 
 .meeting_room_description_outer {
@@ -543,6 +567,10 @@ input {
   user-select: none;
 }
 
+.meeting_room_description_tarrif_plan .tarrif_input::placeholder {
+  color: #000;
+}
+
 .meeting_room_description_tarrif .tarrif_form_submit {
   font: 1.8rem/4.6rem "Roboto-Regular";
   display: block;
@@ -575,4 +603,51 @@ input {
 
 .meeting_room_img {
   width: 100%;
+}
+
+.contacts_content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 87.5%;
+  padding: 50px 40px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.contacts_content::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border: 1px solid #f00;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.contacts_content::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: -14px;
+  bottom: -23px;
+  border: 1px solid #f00;
+  background-color: #fff;
+  z-index: -2;
+}
+
+.contacts_title {
+  font: 2.2rem/2.6rem "Roboto-Bold";
+  letter-spacing: 2px;
+  margin-bottom: 1.4em;
+}
+
+.contacts_description {
+  font: 1.8rem/2.2rem "Roboto-Light";
+  letter-spacing: 2px;
+  margin-bottom: 3em;
 }

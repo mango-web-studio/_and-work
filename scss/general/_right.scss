@@ -1,6 +1,43 @@
-.right {
-    @include background(url("../img/home/home_right.gif"), center, center);
+.home {
 
+    .right {
+
+        &_bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+    
+            &_bg.menu_open {
+                display: none;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .menu_checkbox_input {
+    
+        &:checked {
+    
+            & ~ .right {
+    
+                .right {
+    
+                    &_bg {
+                        display: none;
+                    }
+    
+                    &_bg.menu_open {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.right {
     position: relative;
     width: 50%;
     height: 100%;
@@ -17,16 +54,6 @@
             fill: $red_1;
             width: 100%;
             height: 100%;
-        }
-    }
-}
-
-.menu_checkbox_input {
-
-    &:checked {
-
-        & ~ .right {
-            background-image: url(../img/home/home_right__menu.gif);
         }
     }
 }
