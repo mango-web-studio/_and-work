@@ -1,8 +1,9 @@
-window.onload = function () {
+window.onload = function() {
     // stylization of "select" elements
     let divWrapSelect, selElmnt, a, b, c;
     /*look for any elements with the class "select_wrap":*/
     divWrapSelect = document.getElementsByClassName("select_wrap");
+
     for (let i = 0; i < divWrapSelect.length; i++) {
         selElmnt = divWrapSelect[i].getElementsByTagName("select")[0];
         /*for each element, create a new DIV that will act as the selected item:*/
@@ -13,22 +14,28 @@ window.onload = function () {
         /*for each element, create a new DIV that will contain the option list:*/
         b = document.createElement("DIV");
         b.setAttribute("class", "select-items select-hide");
+
         for (let j = 0; j < selElmnt.length; j++) {
             /*for each option in the original select element, create a new DIV that will act as an option item:*/
             c = document.createElement("DIV");
             c.innerHTML = selElmnt.options[j].innerHTML;
             c.addEventListener("click", function() {
                 /*when an item is clicked, update the original select box, and the selected item:*/
-                var y, s, h;
+                let y, s, h, tarrifInput;
                 s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                // div element with class name "select-selected"
                 h = this.parentNode.previousSibling;
+                // the input element with class name "tarrif_input"
+                tarrifInput = this.parentNode.parentNode.parentNode.nextElementSibling.querySelector('input');
                 for (let i = 0; i < s.length; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
                         s.selectedIndex = i;
+                        // write in the input element value of the slected option
+                        tarrifInput.value = s.getElementsByTagName('option')[s.selectedIndex].getAttribute('data-price');
                         h.innerHTML = this.innerHTML;
                         y = this.parentNode.getElementsByClassName("same-as-selected");
                         for (let k = 0; k < y.length; k++) {
-                        y[k].removeAttribute("class");
+                            y[k].removeAttribute("class");
                         }
                         this.setAttribute("class", "same-as-selected");
                         break;
@@ -46,6 +53,9 @@ window.onload = function () {
             this.nextSibling.classList.toggle("select-hide");
             this.classList.toggle("select-arrow-active");
         });
+
+        // a.innerHTML = selElmnt.options[selElmnt.selectedIndex];
+
     }
     
     function closeAllSelect(elmnt) {

@@ -1,0 +1,21 @@
+.error {
+
+    &_content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 4.17%;
+        z-index: 1;
+    }
+
+    &_title {
+        @include font(96px, 120px, 'Roboto-Bold');
+
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        text-align: center;
+        color: $red_1;
+    }
+}

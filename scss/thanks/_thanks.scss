@@ -1,12 +1,12 @@
-.contacts {
+.thanks {
 
     &_content {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 87.5%;
-        padding: 6.945% 5.556%;
+        width: 62.5%;
+        padding: 3.47%;
         background-color: $white_1;
         z-index: 1;
 
@@ -18,7 +18,7 @@
             left: 0;
             bottom: 0;
             border: 1px solid $red_1;
-            background-color: $white_1;
+            background-color: $red_1;
             z-index: -1;
         }
 
@@ -27,8 +27,8 @@
             content: '';
             width: 100%;
             height: 100%;
-            left: -14px;
-            bottom: -23px;
+            left: -10px;
+            bottom: -12px;
             border: 1px solid $red_1;
             background-color: $white_1;
             z-index: -2;
@@ -36,38 +36,18 @@
     }
 
     &_title {
-        @include font(22px, 26px, 'Roboto-Bold');
+        @include font(20px, 24px, 'Roboto-Bold');
 
         letter-spacing: 2px;
-        margin-bottom: 5.46%;
+        margin-bottom: 6.25%;
+        color: $white_1;
     }
     
     &_description {
-        @include font(18px, 22px, 'Roboto-Light');
+        @include font(20px, 24px, 'Roboto-Regular');
         
         letter-spacing: 2px;
         margin-bottom: 9.82%;
-    }
-
-    &_phone {
-        color: $black_1;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    
-    &_mail {
-        color: $black_1;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    &_frame {
-        width: 50%;
-        height: 230px;
-        mix-blend-mode: luminosity;
+        color: $white_1;
     }
 }

@@ -194,10 +194,6 @@
                     background-color: $white_1;
                     white-space: nowrap;
                     user-select: none;
-
-                    &::placeholder {
-                        color: $black_1;
-                    }
                 }
                 
             }
