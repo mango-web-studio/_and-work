@@ -538,7 +538,7 @@ input {
   position: absolute;
   content: "";
   top: 50%;
-  right: 25px;
+  right: 15px;
   width: 13px;
   height: 13px;
   border: 1px solid transparent;

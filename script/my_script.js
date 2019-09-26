@@ -22,18 +22,18 @@ window.onload = function() {
             c.addEventListener("click", function() {
                 /*when an item is clicked, update the original select box, and the selected item:*/
                 let y, s, h, tarrifInput;
-                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                s = this.parentElement.parentElement.getElementsByTagName("select")[0];
                 // div element with class name "select-selected"
-                h = this.parentNode.previousSibling;
+                h = this.parentElement.previousSibling;
                 // the input element with class name "tarrif_input"
-                tarrifInput = this.parentNode.parentNode.parentNode.nextElementSibling.querySelector('input');
+                tarrifInput = this.parentElement.parentElement.parentElement.nextElementSibling.querySelector('input');
                 for (let i = 0; i < s.length; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
                         s.selectedIndex = i;
                         // write in the input element value of the slected option
                         tarrifInput.value = s.getElementsByTagName('option')[s.selectedIndex].getAttribute('data-price');
                         h.innerHTML = this.innerHTML;
-                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        y = this.parentElement.getElementsByClassName("same-as-selected");
                         for (let k = 0; k < y.length; k++) {
                             y[k].removeAttribute("class");
                         }
@@ -53,9 +53,6 @@ window.onload = function() {
             this.nextSibling.classList.toggle("select-hide");
             this.classList.toggle("select-arrow-active");
         });
-
-        // a.innerHTML = selElmnt.options[selElmnt.selectedIndex];
-
     }
     
     function closeAllSelect(elmnt) {
