@@ -15,14 +15,13 @@
     position: fixed;
     width: 50%;
     padding: 2.78% 3.125% 0 0;
-    z-index: 2;
+    z-index: 99;
 
     .logo_link {
         display: block;
         width: 50.7%;
         margin-left: 12px;
     }
-
 }
 
 .logo_svg {

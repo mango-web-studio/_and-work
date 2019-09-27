@@ -3,6 +3,18 @@
     .left {
         z-index: 1;
     }
+
+    // &_portfolio {
+    //     height: 100%;
+        
+    //     &_list {
+    //         height: 100%;
+    //     }
+        
+    //     &_item {
+    //         height: 100%;
+    //     }
+    // }
 }
 
 .meeting_room {
@@ -10,58 +22,51 @@
     &_radio {
         display: none;
 
-        &_1:checked {
+        &:checked {
 
-            & ~ .right .meeting_room_1 {
-                display: block;
-            }
-        }
-
-        &_2:checked {
-
-            & ~ .right .meeting_room_2 {
-                display: block;
-            }
-        }
-
-        &_3:checked {
-
-            & ~ .right .meeting_room_3 {
-                display: block;
-            }
-        }
-
-        &_4:checked {
-
-            & ~ .right .meeting_room_4 {
+            & + .meeting_room_section {
                 display: block;
             }
         }
     }
 
-    &_description_container {
+    &_container_description {
+        position: relative;
         height: 100%;
-        overflow: hidden;
+        width: calc( 100% + 17px );
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none; 
+        }
         
-        &_inner {
-            position: relative;
+        &_outer {
             height: 100%;
-            width: calc( 100% + 17px );
-            overflow-y: scroll;
+            overflow: hidden;
+        }
+
+        &_inner {
+            width: calc( 100% - 17px);
+        }
+
+        &_item {
+            padding: 18.05% 0 14%;
         }
     }
 
     &_description {
-        position: absolute;
-        width: calc(100% - 17px);
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
         padding: 0 5.43%;
 
         &_outer {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        &_inner {
             position: relative;
             height: 100%;
+            width: calc( 100% + 17px);
+            overflow-y: scroll;
         }
 
         &_title {
@@ -140,7 +145,7 @@
                         user-select: none;
 
                         &:hover {
-                            background-color: $gray_1;
+                            text-decoration: underline;
                         }
                     }
                 }
@@ -163,9 +168,9 @@
                         position: absolute;
                         content: "";
                         top: 50%;
-                        right: 15px;
-                        width: 13px;
-                        height: 13px;
+                        right: 14px;
+                        width: 12px;
+                        height: 12px;
                         border: 1px solid transparent;
                         border-color: transparent $black_1 $black_1 transparent;
                         transform-origin: center center;
@@ -195,7 +200,6 @@
                     white-space: nowrap;
                     user-select: none;
                 }
-                
             }
 
             .tarrif_form_submit {
@@ -218,8 +222,8 @@
             }
         }
     }
-    
-    &_photo {
+
+    &_section {
         display: none;
         height: 100vh;
         overflow: hidden;
@@ -229,6 +233,10 @@
         height: 100%;
         width: calc( 100% + 17px );
         overflow-y: scroll;
+    }
+    
+    &_item {
+        width: calc( 100% - 17px );
     }
 
     &_img {

@@ -5,7 +5,7 @@
     background-color: $white_1;
 
     &_marquee {
-        @include font(22px, 26px, 'Roboto-Regular');
+        @include font(22px, 26px, 'Roboto-Light');
 
         position: fixed;
         bottom: 0;
@@ -14,7 +14,7 @@
         color: $red_1;
         transform: rotate(-90deg);
         transform-origin: bottom left;
-        z-index: 2;
+        z-index: 11;
         pointer-events: none;
     }
 }
@@ -24,7 +24,7 @@
     &_link {
         position: absolute;
         left: 40px;
-        bottom: 18.9%;
+        bottom: 12%;
         width: 30%;
         z-index: 1;
     }

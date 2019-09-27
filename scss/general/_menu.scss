@@ -5,12 +5,12 @@
     height: 100%;
     width: 50%;
     background-color: $white_1;
-    z-index: 1;
+    z-index: 10;
     transition: 0.5s;
 
     &_item_social_wrap {
         position: absolute;
-        top: 18%;
+        top: 20%;
         left: 40px;
         display: flex;
         flex-direction: column;
@@ -71,7 +71,7 @@
             user-select: none;
 
             &:hover {
-                background-color: $gray_1;
+                text-decoration: underline;
             }
         }
     }
