@@ -22,13 +22,6 @@
                                 width: 100%;
                                 padding-left: 0;
                             }
-                        }& {
-                            margin-bottom: 5.15%;
-
-                            &_description {
-                                width: 100%;
-                                padding-left: 0;
-                            }
                         }
 
                         &_label_arrow {
@@ -44,6 +37,7 @@
                                 @include font(20px, 22px, 'Roboto-Regular');
 
                                 letter-spacing: 2px;
+                                text-decoration: underline $red_1;
 
                                 &_date {
                                     @include font(20px, 22px, 'Roboto-Black');
@@ -103,6 +97,7 @@
                                 @include font(20px, 22px, 'Roboto-Regular');
 
                                 letter-spacing: 2px;
+                                text-decoration: underline $red_1;
 
                                 &_date {
                                     @include font(20px, 22px, 'Roboto-Black');
@@ -163,6 +158,7 @@
                                 @include font(20px, 22px, 'Roboto-Regular');
 
                                 letter-spacing: 2px;
+                                text-decoration: underline $red_1;
 
                                 &_date {
                                     @include font(20px, 22px, 'Roboto-Black');
@@ -223,6 +219,7 @@
                                 @include font(20px, 22px, 'Roboto-Regular');
 
                                 letter-spacing: 2px;
+                                text-decoration: underline $red_1;
 
                                 &_date {
                                     @include font(20px, 22px, 'Roboto-Black');
@@ -415,7 +412,7 @@
     &_footer {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
 
         &_censorship {
             @include font(18px, 22px, 'Roboto-Light');
