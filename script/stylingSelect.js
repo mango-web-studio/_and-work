@@ -60,17 +60,17 @@ window.onload = function() {
     
     function closeAllSelect(elmnt) {
         /*a function that will close all select boxes in the document, except the current select box:*/
-        var x, y, i, arrNo = [];
+        let x, y, arrNo = [];
         x = document.getElementsByClassName("select-items");
         y = document.getElementsByClassName("select-selected");
-        for (i = 0; i < y.length; i++) {
+        for (let i = 0; i < y.length; i++) {
             if (elmnt == y[i]) {
-                arrNo.push(i)
+                arrNo.push(i);
             } else {
                 y[i].classList.remove("select-arrow-active");
             }
         }
-        for (i = 0; i < x.length; i++) {
+        for (let i = 0; i < x.length; i++) {
             if (arrNo.indexOf(i)) {
                 x[i].classList.add("select-hide");
             }

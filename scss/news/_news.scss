@@ -46,11 +46,6 @@
                                 }
                             }
                         }
-
-                        &_main_description {
-                            height: auto;
-                            overflow: auto;
-                        }
                     }
                 }
             }
@@ -106,13 +101,7 @@
                                 }
                             }
                         }
-
-                        &_main_description {
-                            height: auto;                                
-                            overflow: auto;
-                        }
                     }
-                    
                 }
             }
 
@@ -167,13 +156,7 @@
                                 }
                             }
                         }
-
-                        &_main_description {
-                            height: auto;                                
-                            overflow: auto;
-                        }
                     }
-                    
                 }
             }
 
@@ -228,13 +211,7 @@
                                 }
                             }
                         }
-
-                        &_main_description {
-                            height: auto;                                
-                            overflow: auto;
-                        }
                     }
-                    
                 }
             }
 
@@ -387,9 +364,10 @@
         }
     }
 
-    &_main_description {
+    &_main_description_wrap {
         height: 0;
         overflow: hidden;
+        transition: 0.5s;
     }
 
     &_content {
