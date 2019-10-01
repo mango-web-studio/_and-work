@@ -118,7 +118,7 @@
 
     &:checked {
 
-        & + .left .menu {
+        & ~ .left .menu {
             opacity: 1;
             visibility: visible;
         }

@@ -1,0 +1,244 @@
+.about {
+
+    .menu {
+
+        &_checkbox_input {
+            
+            &:checked {
+
+                & ~ .header {
+
+                    .close_menu {
+                        display: block;
+                    }
+    
+                    .open_menu {
+                        display: none;
+                    }
+                }
+
+                & ~ .menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            &:not(:checked) {
+
+                & ~ .menu {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+
+    &_content {
+        position: relative;
+        width: 100%;
+        overflow-y: scroll;
+        
+        &_inner {
+            position: relative;
+            padding: 5.56% 0 1.74%;
+        }
+        
+        .bottom_marquee {
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+
+        .highlighted {
+            @include font(16px, 20px, 'Roboto-Regular');
+        }
+
+        .upperCase {
+            text-transform: uppercase;
+        }
+
+        .color {
+            @include font(16px, 20px, 'Roboto-Black');
+
+            color: $red_1;
+        }
+    }
+
+    &_list {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    &_item {
+        width: 50%;
+
+        &:nth-child(2n+1) {
+
+            .about_item_inner {
+                @include font(16px, 20px, 'Roboto-Light');
+                
+                position: relative;
+                width: 79.76%;
+                margin: 0 auto;
+                padding: 13.89% 5.56%;
+                letter-spacing: 2px;
+                z-index: 1;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    bottom: 0;
+                    border: 1px solid $red_1;
+                    background-color: $white_1;
+                    z-index: -1;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    left: -14px;
+                    bottom: -23px;
+                    border: 1px solid $red_1;
+                    background-color: $white_1;
+                    z-index: -2;
+                }
+            }
+        }
+
+        &:nth-child(3),
+        &:nth-child(5),
+        &:nth-child(6) {
+            order: 1;
+        }
+
+        &:first-child {
+
+            .about_item_inner {
+                margin-top: 5.56%;
+            }
+        }
+
+        &:last-child {
+            z-index: 1;
+
+            .about_item_img {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+
+            .about_item_img {
+                margin-left: auto;
+            }
+        }
+
+        &:nth-child(3) {
+
+            .about_item_inner {
+                margin-top: 5.56%;
+
+                &:after {
+                    left: 12px;
+                    bottom: 12px;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+
+            .about_item_img {
+                margin-left: 5%;
+                margin-top: -25%;
+            }
+        }
+
+        &:nth-child(5) {
+
+            .about_item_inner {
+                margin: 23.6% auto 17.36%;
+            }
+        }
+
+        &:nth-child(6) {
+
+            .about_item_inner {
+                margin: 23.6% auto 17.36%;
+            }
+        }
+        
+        &_description {
+
+            &_item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 6.05%;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &_svg_wrap {
+                margin-right: 12%;
+            }
+
+            &_inner {
+                margin-bottom: 8.1%;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &_paragraph {
+
+                &:first-child { 
+                    margin-bottom: 4.05%;
+                }
+            }
+        }
+
+        &_title  {
+            margin-bottom: 6.05%;
+        }
+    }
+
+    .achieve_marquee {
+        position: absolute;
+        left: 0;
+        top: 25%;
+
+        &_svg {
+            fill: $red_1;
+        }
+    }
+
+    .learn_marquee {
+        position: absolute;
+        left: 0;
+        top: 50%;
+
+        &_svg {
+            fill: $red_1;
+        }
+    }
+
+    .speak_marquee {
+        position: absolute;
+        left: 60%;
+        top: 0;
+        height: 100%;
+        width: 10%;
+
+        &_svg {
+            fill: $red_1;
+            margin: auto;
+        }
+    }
+}

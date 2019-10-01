@@ -43,8 +43,7 @@ html {
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -75,8 +74,6 @@ button {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 0;
@@ -165,16 +162,14 @@ button {
 .right_bg {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .right_bg_bg.menu_open {
   display: none;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .left {
@@ -191,10 +186,8 @@ button {
   left: 50%;
   width: 100vh;
   color: #f00;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
   z-index: 11;
   pointer-events: none;
 }
@@ -210,7 +203,6 @@ button {
 .button_book_now path {
   fill: #f00;
   stroke: #f00;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -237,16 +229,12 @@ button {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  left: 0;
+  top: 0;
   width: 50%;
   padding: 2.78% 3.125% 0 0;
   z-index: 99;
@@ -296,7 +284,6 @@ button {
   width: 50%;
   background-color: #fff;
   z-index: 10;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   /*style items (options):*/
   /*hide the items when the select box is closed:*/
@@ -306,16 +293,9 @@ button {
   position: absolute;
   top: 20%;
   left: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: 40.5%;
 }
 
@@ -365,10 +345,7 @@ button {
   font: 1.8rem/2rem "Roboto-Light";
   padding: 10%;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .menu .select-items div:hover {
@@ -382,10 +359,7 @@ button {
   border: 1px solid #000;
   background-color: #fff;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   margin-top: 5px;
   /*style the arrow inside the select element:*/
   /*point the arrow upwards when the select box is open (active):*/
@@ -400,24 +374,20 @@ button {
   height: 13px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: translateY(-75%) rotate(45deg);
-          transform: translateY(-75%) rotate(45deg);
-  -webkit-transition: 0.5s;
+  transform-origin: center center;
+  transform: translateY(-75%) rotate(45deg);
   transition: 0.5s;
 }
 
 .menu .select-selected.select-arrow-active::after {
-  -webkit-transform: translateY(-25%) rotate(-135deg);
-          transform: translateY(-25%) rotate(-135deg);
+  transform: translateY(-25%) rotate(-135deg);
 }
 
 .menu .select-hide {
   display: none;
 }
 
-.menu_checkbox_input:checked + .left .menu {
+.menu_checkbox_input:checked ~ .left .menu {
   opacity: 1;
   visibility: visible;
 }
@@ -425,6 +395,202 @@ button {
 .menu_checkbox_input:not(:checked) ~ .left .menu {
   opacity: 0;
   visibility: hidden;
+}
+
+.about .menu_checkbox_input:checked ~ .header .close_menu {
+  display: block;
+}
+
+.about .menu_checkbox_input:checked ~ .header .open_menu {
+  display: none;
+}
+
+.about .menu_checkbox_input:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.about .menu_checkbox_input:not(:checked) ~ .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.about_content {
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.about_content_inner {
+  position: relative;
+  padding: 5.56% 0 1.74%;
+}
+
+.about_content .bottom_marquee {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.about_content .highlighted {
+  font: 1.6rem/2rem "Roboto-Regular";
+}
+
+.about_content .upperCase {
+  text-transform: uppercase;
+}
+
+.about_content .color {
+  font: 1.6rem/2rem "Roboto-Black";
+  color: #f00;
+}
+
+.about_list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.about_item {
+  width: 50%;
+}
+
+.about_item:nth-child(2n+1) .about_item_inner {
+  font: 1.6rem/2rem "Roboto-Light";
+  position: relative;
+  width: 79.76%;
+  margin: 0 auto;
+  padding: 13.89% 5.56%;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+.about_item:nth-child(2n+1) .about_item_inner::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  border: 1px solid #f00;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.about_item:nth-child(2n+1) .about_item_inner::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: -14px;
+  bottom: -23px;
+  border: 1px solid #f00;
+  background-color: #fff;
+  z-index: -2;
+}
+
+.about_item:nth-child(3), .about_item:nth-child(5), .about_item:nth-child(6) {
+  order: 1;
+}
+
+.about_item:first-child .about_item_inner {
+  margin-top: 5.56%;
+}
+
+.about_item:last-child {
+  z-index: 1;
+}
+
+.about_item:last-child .about_item_img {
+  width: 100%;
+}
+
+.about_item:nth-child(2) .about_item_img {
+  margin-left: auto;
+}
+
+.about_item:nth-child(3) .about_item_inner {
+  margin-top: 5.56%;
+}
+
+.about_item:nth-child(3) .about_item_inner:after {
+  left: 12px;
+  bottom: 12px;
+}
+
+.about_item:nth-child(4) .about_item_img {
+  margin-left: 5%;
+  margin-top: -25%;
+}
+
+.about_item:nth-child(5) .about_item_inner {
+  margin: 23.6% auto 17.36%;
+}
+
+.about_item:nth-child(6) .about_item_inner {
+  margin: 23.6% auto 17.36%;
+}
+
+.about_item_description_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6.05%;
+}
+
+.about_item_description_item:last-child {
+  margin-bottom: 0;
+}
+
+.about_item_description_svg_wrap {
+  margin-right: 12%;
+}
+
+.about_item_description_inner {
+  margin-bottom: 8.1%;
+}
+
+.about_item_description_inner:last-child {
+  margin-bottom: 0;
+}
+
+.about_item_description_paragraph:first-child {
+  margin-bottom: 4.05%;
+}
+
+.about_item_title {
+  margin-bottom: 6.05%;
+}
+
+.about .achieve_marquee {
+  position: absolute;
+  left: 0;
+  top: 25%;
+}
+
+.about .achieve_marquee_svg {
+  fill: #f00;
+}
+
+.about .learn_marquee {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.about .learn_marquee_svg {
+  fill: #f00;
+}
+
+.about .speak_marquee {
+  position: absolute;
+  left: 60%;
+  top: 0;
+  height: 100%;
+  width: 10%;
+}
+
+.about .speak_marquee_svg {
+  fill: #f00;
+  margin: auto;
 }
 
 .price .left {
@@ -460,6 +626,7 @@ button {
 }
 
 .meeting_room_container_description_item {
+  height: 100vh;
   padding: 18.05% 0 14%;
 }
 
@@ -486,8 +653,7 @@ button {
 }
 
 .meeting_room_description_title:first-child {
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .meeting_room_description_label {
@@ -507,15 +673,9 @@ button {
 
 .meeting_room_description_tarrif_plan {
   font: 1.8rem/2.2rem "Roboto-Light";
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   /*style items (options):*/
   /*hide the items when the select box is closed:*/
 }
@@ -537,13 +697,8 @@ button {
 .meeting_room_description_tarrif_plan .select-items {
   font: 1.8rem/2rem "Roboto-Light";
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
   top: auto;
   bottom: 100%;
   left: 0;
@@ -559,10 +714,7 @@ button {
   font: 1.8rem/2rem "Roboto-Light";
   padding: 10%;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .meeting_room_description_tarrif_plan .select-items div:hover {
@@ -579,10 +731,7 @@ button {
   background-color: #fff;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   /*style the arrow inside the select element:*/
   /*point the arrow upwards when the select box is open (active):*/
 }
@@ -596,17 +745,13 @@ button {
   height: 12px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: translateY(-25%) rotate(-135deg);
-          transform: translateY(-25%) rotate(-135deg);
-  -webkit-transition: 0.5s;
+  transform-origin: center center;
+  transform: translateY(-25%) rotate(-135deg);
   transition: 0.5s;
 }
 
 .meeting_room_description_tarrif_plan .select-selected.select-arrow-active::after {
-  -webkit-transform: translateY(-75%) rotate(45deg);
-          transform: translateY(-75%) rotate(45deg);
+  transform: translateY(-75%) rotate(45deg);
 }
 
 .meeting_room_description_tarrif_plan .select-hide {
@@ -621,10 +766,7 @@ button {
   border: 1px solid #000;
   background-color: #fff;
   white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .meeting_room_description_tarrif .tarrif_form_submit {
@@ -683,15 +825,13 @@ button {
 }
 
 .news_radio_1:checked ~ .left .news_container_item_1 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
+  transform: translate(-75%, -25%) rotate(-135deg);
 }
 
 .news_radio_1:checked ~ .left .news_container_item_1 .news_title_description {
   font: 2rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .news_radio_1:checked ~ .left .news_container_item_1 .news_title_description_date {
@@ -700,9 +840,7 @@ button {
 }
 
 .news_radio_1:checked ~ .left .news_container_item_1 .news_main_description {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   overflow: auto;
 }
 
@@ -724,15 +862,13 @@ button {
 }
 
 .news_radio_2:checked ~ .left .news_container_item_2 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
+  transform: translate(-75%, -25%) rotate(-135deg);
 }
 
 .news_radio_2:checked ~ .left .news_container_item_2 .news_title_description {
   font: 2rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .news_radio_2:checked ~ .left .news_container_item_2 .news_title_description_date {
@@ -741,9 +877,7 @@ button {
 }
 
 .news_radio_2:checked ~ .left .news_container_item_2 .news_main_description {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   overflow: auto;
 }
 
@@ -765,15 +899,13 @@ button {
 }
 
 .news_radio_3:checked ~ .left .news_container_item_3 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
+  transform: translate(-75%, -25%) rotate(-135deg);
 }
 
 .news_radio_3:checked ~ .left .news_container_item_3 .news_title_description {
   font: 2rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .news_radio_3:checked ~ .left .news_container_item_3 .news_title_description_date {
@@ -782,9 +914,7 @@ button {
 }
 
 .news_radio_3:checked ~ .left .news_container_item_3 .news_main_description {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   overflow: auto;
 }
 
@@ -806,15 +936,13 @@ button {
 }
 
 .news_radio_4:checked ~ .left .news_container_item_4 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
+  transform: translate(-75%, -25%) rotate(-135deg);
 }
 
 .news_radio_4:checked ~ .left .news_container_item_4 .news_title_description {
   font: 2rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .news_radio_4:checked ~ .left .news_container_item_4 .news_title_description_date {
@@ -823,9 +951,7 @@ button {
 }
 
 .news_radio_4:checked ~ .left .news_container_item_4 .news_main_description {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
   overflow: auto;
 }
 
@@ -917,8 +1043,6 @@ button {
 }
 
 .news_header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 0;
 }
@@ -929,15 +1053,9 @@ button {
 }
 
 .news_header_description_top {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 5.15%;
 }
 
@@ -957,11 +1075,8 @@ button {
   height: 20px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform: translate(-75%, -25%) rotate(45deg);
-          transform: translate(-75%, -25%) rotate(45deg);
-  -webkit-transform-origin: 75% 75%;
-          transform-origin: 75% 75%;
-  -webkit-transition: 0.5s;
+  transform: translate(-75%, -25%) rotate(45deg);
+  transform-origin: 75% 75%;
   transition: 0.5s;
 }
 
@@ -993,15 +1108,9 @@ button {
 }
 
 .news_footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .news_footer_censorship {
@@ -1054,8 +1163,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 87.5%;
   padding: 6.945% 5.556%;
   background-color: #fff;
@@ -1124,8 +1232,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 62.5%;
   padding: 3.47%;
   background-color: #fff;
@@ -1174,8 +1281,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   padding: 4.17%;
   z-index: 1;
