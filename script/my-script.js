@@ -1,24 +1,24 @@
 window.onload = function() {
-    // stylization of "select" elements
+    /* stylization of "select" elements */
     let divWrapSelects, selElmnt, a, b, c;
-    /*look for any elements with the class "select_wrap":*/
+    /* look for any elements with the class "select_wrap": */
     divWrapSelects = document.getElementsByClassName("select_wrap");
     for (let i = 0; i < divWrapSelects.length; i++) {
         selElmnt = divWrapSelects[i].getElementsByTagName("select")[0];
-        /*for each element, create a new DIV that will act as the selected item:*/
+        /* for each element, create a new DIV that will act as the selected item: */
         a = document.createElement("div");
         a.setAttribute("class", "select-selected");
         a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
         divWrapSelects[i].appendChild(a);
-        /*for each element, create a new DIV that will contain the option list:*/
+        /* for each element, create a new DIV that will contain the option list: */
         b = document.createElement("div");
         b.setAttribute("class", "select-items select-hide");
         for (let j = 0; j < selElmnt.length; j++) {
-            /*for each option in the original select element, create a new DIV that will act as an option item:*/
+            /* for each option in the original select element, create a new DIV that will act as an option item: */
             c = document.createElement("div");
             c.innerHTML = selElmnt.options[j].innerHTML;
             c.addEventListener("click", function() {
-                /*when an item is clicked, update the original select box, and the selected item:*/
+                /* when an item is clicked, update the original select box, and the selected item: */
                 let y, s, h, tarrifInput;
                 s = this.parentElement.parentElement.getElementsByTagName("select")[0];
                 // div element with class name "select-selected"
@@ -48,18 +48,18 @@ window.onload = function() {
             b.appendChild(c);
         }
         divWrapSelects[i].appendChild(b);
-        
+
         a.addEventListener("click", function(e) {
-            /*when the select box is clicked, close any other select boxes, and open/close the current select box:*/
+            /* when the select box is clicked, close any other select boxes, and open/close the current select box: */
             e.stopPropagation();
             closeAllSelect(this);
             this.nextSibling.classList.toggle("select-hide");
             this.classList.toggle("select-arrow-active");
         });
     }
-    
+
     function closeAllSelect(elmnt) {
-        /*a function that will close all select boxes in the document, except the current select box:*/
+        /* a function that will close all select boxes in the document, except the current select box: */
         let x, y, arrNo = [];
         x = document.getElementsByClassName("select-items");
         y = document.getElementsByClassName("select-selected");
@@ -76,6 +76,70 @@ window.onload = function() {
             }
         }
     }
-    /*if the user clicks anywhere outside the select box, then close all select boxes:*/
+    /* if the user clicks anywhere outside the select box, then close all select boxes: */
     document.addEventListener("click", closeAllSelect);
+
+
+    /* FOR NEWS PAGE */
+    /* Opens and closes news on the "news" page. */
+    let newsSection     = document.querySelectorAll('.news_main');
+    let photos          = document.querySelectorAll('.news_portfolio_item');
+    let newsDescription = document.querySelectorAll('.news_main_description');
+    let newsArrow       = document.querySelectorAll('.news_label_arrow');
+
+    for (let i = 0; i < newsSection.length; i++) {
+        newsSection[i].addEventListener("click", function() {
+            openNews(this);
+        });
+        newsArrow[i].addEventListener("click", function(e) {
+            e.stopPropagation();
+            closeNews(this);
+        });
+    }
+    // when you click on the block the news opens
+    function openNews(elem) {
+        let currentNewsDescription = elem.querySelector('.news_main_description_wrap');
+        elem.classList.add('open');
+
+        for (let i = 0; i < newsSection.length; i++) {
+            if (elem == newsSection[i]) {
+                photos[i].style.display = "block";
+                currentNewsDescription.style.height = `${newsDescription[i].offsetHeight}px`;
+            } else {
+                photos[i].style.display = "none";
+                newsDescription[i].parentNode.style.height = '0px';
+                newsSection[i].classList.remove('open');
+            }
+        }
+    }
+    // when you click on the arrow the news closes
+    function closeNews(elem) {
+        let currentNewsHeader  = elem.closest('.news_header');
+        let currentNewsSection = elem.closest('.news_main');
+        currentNewsHeader.nextElementSibling.style.height = '0px';
+        currentNewsSection.classList.remove('open');
+    }
+    
+
+    /* FOR PRICE PAGE */
+    /* Opens and closes portfolio on the "price" page. */
+    let portfolioLabel = document.querySelectorAll('.meeting_room_description_label');
+    let portfolioPhoto = document.querySelectorAll('.price_portfolio_item');
+
+    for (let i = 0; i < portfolioLabel.length; i++) {
+        portfolioLabel[i].addEventListener("click", function() {
+            openPortfolio(this);
+        });
+    }
+    // when you click on the block the news opens
+    function openPortfolio(elem) {
+
+        for (let i = 0; i < portfolioLabel.length; i++) {
+            if (elem == portfolioLabel[i]) {
+                portfolioPhoto[i].style.display = 'block';
+            } else {
+                portfolioPhoto[i].style.display = "none";
+            }
+        }
+    }
 };

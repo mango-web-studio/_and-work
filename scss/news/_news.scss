@@ -1,231 +1,50 @@
 .news {
 
-    &_radio {
-        display: none;
+    .open {
 
-        &_1:checked {
+        .news {
 
-            & ~ .left {
+            &_image_preview_wrap {
+                display: none;
+            }
 
-                .news_container_item_1 {
+            &_header {
+                margin-bottom: 5.15%;
+                
+                &_description {
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+    
+            &_label_arrow {
+                pointer-events: all;
+    
+                &::after {
+                    transform: translate(-75%, -25%) rotate(-135deg);
+                }
+            }
 
-                    .news {
+            &_title {
 
-                        &_image_preview_wrap {
-                            display: none;
-                        }
+                &_description {
+                    @include font(20px, 22px, 'Roboto-Regular');
 
-                        &_header {
-                            margin-bottom: 5.15%;
-                            
-                            &_description {
-                                width: 100%;
-                                padding-left: 0;
-                            }
-                        }
+                    letter-spacing: 2px;
+                    text-decoration: underline $red_1;
 
-                        &_label_arrow {
+                    &_date {
+                        @include font(20px, 22px, 'Roboto-Black');
 
-                            &::after {
-                                transform: translate(-75%, -25%) rotate(-135deg);
-                            }
-                        }
-
-                        &_title {
-        
-                            &_description {
-                                @include font(20px, 22px, 'Roboto-Regular');
-
-                                letter-spacing: 2px;
-                                text-decoration: underline $red_1;
-
-                                &_date {
-                                    @include font(20px, 22px, 'Roboto-Black');
-
-                                    letter-spacing: 2px;
-                                }
-                            }
-                        }
+                        letter-spacing: 2px;
                     }
-                }
-            }
-
-            & ~ .right {
-
-                .news_portfolio_item_1 {
-                    display: block;
-                }
-            }
-        }
-
-        &_2:checked {
-
-            & ~ .left {
-
-                .news_container_item_2 {
-                        
-                    .news {
-
-                        &_image_preview_wrap {
-                            display: none;
-                        }
-
-                        &_header {
-                            margin-bottom: 5.15%;
-                            
-                            &_description {
-                                width: 100%;
-                                padding-left: 0;
-                            }
-                        }
-
-                        &_label_arrow {
-
-                            &::after {
-                                transform: translate(-75%, -25%) rotate(-135deg);
-                            }
-                        }
-
-                        &_title {
-
-                            &_description {
-                                @include font(20px, 22px, 'Roboto-Regular');
-
-                                letter-spacing: 2px;
-                                text-decoration: underline $red_1;
-
-                                &_date {
-                                    @include font(20px, 22px, 'Roboto-Black');
-
-                                    letter-spacing: 2px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            & ~ .right {
-
-                .news_portfolio_item_2 {
-                    display: block;
-                }
-            }
-        }
-
-        &_3:checked {
-
-            & ~ .left {
-
-                .news_container_item_3 {
-                        
-                    .news {
-
-                        &_image_preview_wrap {
-                            display: none;
-                        }
-
-                        &_header {
-                            margin-bottom: 5.15%;
-                            
-                            &_description {
-                                width: 100%;
-                                padding-left: 0;
-                            }
-                        }
-
-                        &_label_arrow {
-
-                            &::after {
-                                transform: translate(-75%, -25%) rotate(-135deg);
-                            }
-                        }
-
-                        &_title {
-
-                            &_description {
-                                @include font(20px, 22px, 'Roboto-Regular');
-
-                                letter-spacing: 2px;
-                                text-decoration: underline $red_1;
-
-                                &_date {
-                                    @include font(20px, 22px, 'Roboto-Black');
-
-                                    letter-spacing: 2px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            & ~ .right {
-
-                .news_portfolio_item_3 {
-                    display: block;
-                }
-            }
-        }
-
-        &_4:checked {
-
-            & ~ .left {
-
-                .news_container_item_4 {
-                        
-                    .news {
-
-                        &_image_preview_wrap {
-                            display: none;
-                        }
-
-                        &_header {
-                            margin-bottom: 5.15%;
-                            
-                            &_description {
-                                width: 100%;
-                                padding-left: 0;
-                            }
-                        }
-
-                        &_label_arrow {
-
-                            &::after {
-                                transform: translate(-75%, -25%) rotate(-135deg);
-                            }
-                        }
-
-                        &_title {
-
-                            &_description {
-                                @include font(20px, 22px, 'Roboto-Regular');
-
-                                letter-spacing: 2px;
-                                text-decoration: underline $red_1;
-
-                                &_date {
-                                    @include font(20px, 22px, 'Roboto-Black');
-
-                                    letter-spacing: 2px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            & ~ .right {
-
-                .news_portfolio_item_4 {
-                    display: block;
                 }
             }
         }
     }
 
 
-// Left Left Left Left Left Left Left Left Left
+// Left side
 
     &_container {
         position: relative;
@@ -263,7 +82,7 @@
             border: 1px solid $red_1;
             cursor: pointer;
             text-transform: uppercase;
-            
+
             &:hover {
                 color: $white_1;
                 background-color: $red_1;
@@ -276,7 +95,8 @@
         width: 85.42%;
         margin: auto;
         padding: 5.56% 9.03%;
-        
+        cursor: pointer;
+
         &::before {
             position: absolute;
             content: '';
@@ -333,6 +153,7 @@
         width: 25px;
         height: 25px;
         cursor: pointer;
+        pointer-events: none;
 
         &::after {
             position: absolute;
@@ -374,11 +195,11 @@
 
         &_paragraph {
             @include font(18px, 22px, 'Roboto-Light');
-    
+
             letter-spacing: 2px;
             margin-bottom: 5.15%;
         }
-        
+
         &_date {
             @include font(18px, 22px, 'Roboto-Regular');
 
@@ -394,7 +215,7 @@
 
         &_censorship {
             @include font(18px, 22px, 'Roboto-Light');
-    
+
             letter-spacing: 2px;
 
             &_color {
@@ -419,24 +240,27 @@
     }
 
 
-
-// Right Right Right Right Right Right Right Right
+// Right side
 
     &_portfolio_item {
         display: none;
+
+        &:first-child {
+            display: block;
+        }
     }
 
     &_section {
         height: 100vh;
         overflow: hidden;
     }
-    
+
     &_list {
         height: 100%;
         width: calc( 100% + 17px );
         overflow-y: scroll;
     }
-    
+
     &_item {
         width: calc(100% - 17px);
     }

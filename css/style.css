@@ -43,8 +43,7 @@ html {
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -75,8 +74,6 @@ button {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 0;
@@ -165,16 +162,14 @@ button {
 .right_bg {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .right_bg_bg.menu_open {
   display: none;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .left {
@@ -191,10 +186,8 @@ button {
   left: 50%;
   width: 100vh;
   color: #f00;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
   z-index: 11;
   pointer-events: none;
 }
@@ -210,7 +203,6 @@ button {
 .button_book_now path {
   fill: #f00;
   stroke: #f00;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -237,15 +229,9 @@ button {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -298,7 +284,6 @@ button {
   width: 50%;
   background-color: #fff;
   z-index: 10;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   /*style items (options):*/
   /*hide the items when the select box is closed:*/
@@ -308,16 +293,9 @@ button {
   position: absolute;
   top: 20%;
   left: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: 40.5%;
 }
 
@@ -367,10 +345,7 @@ button {
   font: 1.8rem/2rem "Roboto-Light";
   padding: 10%;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .menu .select-items div:hover {
@@ -384,10 +359,7 @@ button {
   border: 1px solid #000;
   background-color: #fff;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   margin-top: 5px;
   /*style the arrow inside the select element:*/
   /*point the arrow upwards when the select box is open (active):*/
@@ -402,17 +374,13 @@ button {
   height: 13px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: translateY(-75%) rotate(45deg);
-          transform: translateY(-75%) rotate(45deg);
-  -webkit-transition: 0.5s;
+  transform-origin: center center;
+  transform: translateY(-75%) rotate(45deg);
   transition: 0.5s;
 }
 
 .menu .select-selected.select-arrow-active::after {
-  -webkit-transform: translateY(-25%) rotate(-135deg);
-          transform: translateY(-25%) rotate(-135deg);
+  transform: translateY(-25%) rotate(-135deg);
 }
 
 .menu .select-hide {
@@ -478,13 +446,8 @@ button {
 }
 
 .about_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .about_item {
@@ -526,9 +489,7 @@ button {
 }
 
 .about_item:nth-child(3), .about_item:nth-child(5), .about_item:nth-child(6) {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
 
 .about_item:first-child .about_item_inner {
@@ -570,12 +531,8 @@ button {
 }
 
 .about_item_description_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 6.05%;
 }
 
@@ -640,14 +597,6 @@ button {
   z-index: 1;
 }
 
-.meeting_room_radio {
-  display: none;
-}
-
-.meeting_room_radio:checked + .meeting_room_section {
-  display: block;
-}
-
 .meeting_room_container_description {
   position: relative;
   height: 100%;
@@ -696,8 +645,7 @@ button {
 }
 
 .meeting_room_description_title:first-child {
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
 .meeting_room_description_label {
@@ -717,15 +665,9 @@ button {
 
 .meeting_room_description_tarrif_plan {
   font: 1.8rem/2.2rem "Roboto-Light";
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   /*style items (options):*/
   /*hide the items when the select box is closed:*/
 }
@@ -747,13 +689,8 @@ button {
 .meeting_room_description_tarrif_plan .select-items {
   font: 1.8rem/2rem "Roboto-Light";
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
   top: auto;
   bottom: 100%;
   left: 0;
@@ -769,10 +706,7 @@ button {
   font: 1.8rem/2rem "Roboto-Light";
   padding: 10%;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .meeting_room_description_tarrif_plan .select-items div:hover {
@@ -789,10 +723,7 @@ button {
   background-color: #fff;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   /*style the arrow inside the select element:*/
   /*point the arrow upwards when the select box is open (active):*/
 }
@@ -806,17 +737,13 @@ button {
   height: 12px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: translateY(-25%) rotate(-135deg);
-          transform: translateY(-25%) rotate(-135deg);
-  -webkit-transition: 0.5s;
+  transform-origin: center center;
+  transform: translateY(-25%) rotate(-135deg);
   transition: 0.5s;
 }
 
 .meeting_room_description_tarrif_plan .select-selected.select-arrow-active::after {
-  -webkit-transform: translateY(-75%) rotate(45deg);
-          transform: translateY(-75%) rotate(45deg);
+  transform: translateY(-75%) rotate(45deg);
 }
 
 .meeting_room_description_tarrif_plan .select-hide {
@@ -831,10 +758,7 @@ button {
   border: 1px solid #000;
   background-color: #fff;
   white-space: nowrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .meeting_room_description_tarrif .tarrif_form_submit {
@@ -856,7 +780,6 @@ button {
 }
 
 .meeting_room_section {
-  display: none;
   height: 100vh;
   overflow: hidden;
 }
@@ -875,144 +798,40 @@ button {
   width: 100%;
 }
 
-.news_radio {
+.price_portfolio_item:first-child {
+  display: block;
+}
+
+.news .open .news_image_preview_wrap {
   display: none;
 }
 
-.news_radio_1:checked ~ .left .news_container_item_1 .news_image_preview_wrap {
-  display: none;
-}
-
-.news_radio_1:checked ~ .left .news_container_item_1 .news_header {
+.news .open .news_header {
   margin-bottom: 5.15%;
 }
 
-.news_radio_1:checked ~ .left .news_container_item_1 .news_header_description {
+.news .open .news_header_description {
   width: 100%;
   padding-left: 0;
 }
 
-.news_radio_1:checked ~ .left .news_container_item_1 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
+.news .open .news_label_arrow {
+  pointer-events: all;
 }
 
-.news_radio_1:checked ~ .left .news_container_item_1 .news_title_description {
+.news .open .news_label_arrow::after {
+  transform: translate(-75%, -25%) rotate(-135deg);
+}
+
+.news .open .news_title_description {
   font: 2rem/2.2rem "Roboto-Regular";
   letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
+  text-decoration: underline #f00;
 }
 
-.news_radio_1:checked ~ .left .news_container_item_1 .news_title_description_date {
+.news .open .news_title_description_date {
   font: 2rem/2.2rem "Roboto-Black";
   letter-spacing: 2px;
-}
-
-.news_radio_1:checked ~ .right .news_portfolio_item_1 {
-  display: block;
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_image_preview_wrap {
-  display: none;
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_header {
-  margin-bottom: 5.15%;
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_header_description {
-  width: 100%;
-  padding-left: 0;
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_title_description {
-  font: 2rem/2.2rem "Roboto-Regular";
-  letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
-}
-
-.news_radio_2:checked ~ .left .news_container_item_2 .news_title_description_date {
-  font: 2rem/2.2rem "Roboto-Black";
-  letter-spacing: 2px;
-}
-
-.news_radio_2:checked ~ .right .news_portfolio_item_2 {
-  display: block;
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_image_preview_wrap {
-  display: none;
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_header {
-  margin-bottom: 5.15%;
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_header_description {
-  width: 100%;
-  padding-left: 0;
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_title_description {
-  font: 2rem/2.2rem "Roboto-Regular";
-  letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
-}
-
-.news_radio_3:checked ~ .left .news_container_item_3 .news_title_description_date {
-  font: 2rem/2.2rem "Roboto-Black";
-  letter-spacing: 2px;
-}
-
-.news_radio_3:checked ~ .right .news_portfolio_item_3 {
-  display: block;
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_image_preview_wrap {
-  display: none;
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_header {
-  margin-bottom: 5.15%;
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_header_description {
-  width: 100%;
-  padding-left: 0;
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_label_arrow::after {
-  -webkit-transform: translate(-75%, -25%) rotate(-135deg);
-          transform: translate(-75%, -25%) rotate(-135deg);
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_title_description {
-  font: 2rem/2.2rem "Roboto-Regular";
-  letter-spacing: 2px;
-  -webkit-text-decoration: underline #f00;
-          text-decoration: underline #f00;
-}
-
-.news_radio_4:checked ~ .left .news_container_item_4 .news_title_description_date {
-  font: 2rem/2.2rem "Roboto-Black";
-  letter-spacing: 2px;
-}
-
-.news_radio_4:checked ~ .right .news_portfolio_item_4 {
-  display: block;
 }
 
 .news_container {
@@ -1063,6 +882,7 @@ button {
   width: 85.42%;
   margin: auto;
   padding: 5.56% 9.03%;
+  cursor: pointer;
 }
 
 .news_main::before {
@@ -1099,8 +919,6 @@ button {
 }
 
 .news_header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 0;
 }
@@ -1111,15 +929,9 @@ button {
 }
 
 .news_header_description_top {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 5.15%;
 }
 
@@ -1128,6 +940,7 @@ button {
   width: 25px;
   height: 25px;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .news_label_arrow::after {
@@ -1139,11 +952,8 @@ button {
   height: 20px;
   border: 1px solid transparent;
   border-color: transparent #000 #000 transparent;
-  -webkit-transform: translate(-75%, -25%) rotate(45deg);
-          transform: translate(-75%, -25%) rotate(45deg);
-  -webkit-transform-origin: 75% 75%;
-          transform-origin: 75% 75%;
-  -webkit-transition: 0.5s;
+  transform: translate(-75%, -25%) rotate(45deg);
+  transform-origin: 75% 75%;
   transition: 0.5s;
 }
 
@@ -1160,7 +970,6 @@ button {
 .news_main_description_wrap {
   height: 0;
   overflow: hidden;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -1177,15 +986,9 @@ button {
 }
 
 .news_footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .news_footer_censorship {
@@ -1215,6 +1018,10 @@ button {
   display: none;
 }
 
+.news_portfolio_item:first-child {
+  display: block;
+}
+
 .news_section {
   height: 100vh;
   overflow: hidden;
@@ -1238,8 +1045,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 87.5%;
   padding: 6.945% 5.556%;
   background-color: #fff;
@@ -1308,8 +1114,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 62.5%;
   padding: 3.47%;
   background-color: #fff;
@@ -1358,8 +1163,7 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
   padding: 4.17%;
   z-index: 1;

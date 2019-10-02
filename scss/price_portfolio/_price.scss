@@ -3,32 +3,9 @@
     .left {
         z-index: 1;
     }
-
-    // &_portfolio {
-    //     height: 100%;
-        
-    //     &_list {
-    //         height: 100%;
-    //     }
-        
-    //     &_item {
-    //         height: 100%;
-    //     }
-    // }
 }
 
 .meeting_room {
-
-    &_radio {
-        display: none;
-
-        &:checked {
-
-            & + .meeting_room_section {
-                display: block;
-            }
-        }
-    }
 
     &_container_description {
         position: relative;
@@ -225,7 +202,6 @@
     }
 
     &_section {
-        display: none;
         height: 100vh;
         overflow: hidden;
     }
@@ -242,5 +218,12 @@
 
     &_img {
         width: 100%;
+    }
+}
+
+.price_portfolio_item {
+
+    &:first-child {
+        display: block;
     }
 }
