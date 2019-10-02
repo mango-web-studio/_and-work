@@ -17,6 +17,10 @@ window.onload = function() {
             /* for each option in the original select element, create a new DIV that will act as an option item: */
             c = document.createElement("div");
             c.innerHTML = selElmnt.options[j].innerHTML;
+            // added a class atribute to hide the first "option" of the "select" element
+            if ( j == selElmnt.selectedIndex ) {
+                c.setAttribute("class", "select-hide");
+            }
             c.addEventListener("click", function() {
                 /* when an item is clicked, update the original select box, and the selected item: */
                 let y, s, h, tarrifInput;
@@ -26,7 +30,7 @@ window.onload = function() {
                 for (let i = 0; i < s.length; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
                         s.selectedIndex = i;
-                        if (this.parentElement.parentElement.parentElement.classList.contains('meeting_room_description_tarrif_plan')) {
+                        if (this.closest('.meeting_room_description_tarrif_plan')) {
                             // the input element with class name "tarrif_input"
                             tarrifInput = this.parentElement.parentElement.parentElement.nextElementSibling.querySelector('input');
                             if (tarrifInput) {
@@ -35,7 +39,7 @@ window.onload = function() {
                             }
                         }
                         h.innerHTML = this.innerHTML;
-                        y = this.parentElement.getElementsByClassName("same-as-selected");
+                        y = this.parentElement.getElementsByClassName("select-hide");
                         for (let k = 0; k < y.length; k++) {
                             y[k].removeAttribute("class");
                         }
@@ -47,6 +51,9 @@ window.onload = function() {
             });
             b.appendChild(c);
         }
+        // for (let j = 0; j < selElmnt.length; j++) {
+
+        // }
         divWrapSelects[i].appendChild(b);
 
         a.addEventListener("click", function(e) {
