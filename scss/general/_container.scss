@@ -57,4 +57,10 @@
     border-right: 0;
     color: $red_1;
     z-index: 12;
+    pointer-events: none;
+}
+
+.bottom_position_marquee {
+    opacity: 0;
+    transition: 0.5s;
 }

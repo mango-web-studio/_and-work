@@ -68,7 +68,7 @@
             letter-spacing: 2px;
             margin-bottom: 7.03%;
         }
-        
+
         &_item {
             @include font(18px, 22px, 'Roboto-Light');
     
@@ -79,24 +79,16 @@
 
             &_plan {
                 @include font(18px, 22px, 'Roboto-Light');
-    
+
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-    
+
                 .title {
                     @include font(18px, 22px, 'Roboto-Regular');
 
                     width: 25%;
                 }
-
-                // .select_wrap {
-                //     position: relative;
-
-                //     select {
-                //         display: none; /*hide original SELECT element:*/
-                //     }
-                // }
 
                 /*style items (options):*/
                 .select-items {
@@ -203,6 +195,18 @@
 
     &_img {
         width: 100%;
+    }
+}
+
+.down_arrow_to_scroll {
+    position: fixed;
+    right: calc(50% + 25px);
+    bottom: 20px;
+    cursor: pointer;
+
+    &_svg {
+        width: 28px;
+        height: 28px;
     }
 }
 

@@ -148,10 +148,31 @@ window.onload = function() {
     }
 
 /* For positig the element with class name 'bottom_marquee_position' */
-    let bottomMarquee      = document.querySelector('.bottom_position_marquee')
-    let scrollingElem      = document.querySelector('.scrolling_elememnt')
-    let scrollingElemInner = document.querySelector('.scrolling_elememnt_inner')
-    if (bottomMarquee) {
-        
+    let bottomMarquee = document.querySelector('.bottom_position_marquee');
+    let scrollingElem = document.querySelector('.scrolling_element');
+    let leftElem      = document.querySelector('.left');
+    if (leftElem) {
+        scrollingElem.addEventListener('scroll', function () {
+            if (bottomMarquee) {
+                if ((scrollingElem.scrollTop + scrollingElem.clientHeight) == scrollingElem.scrollHeight) {
+                    bottomMarquee.style.opacity = 1;
+                } else {
+                    bottomMarquee.style.opacity = 0;
+                }
+            }
+        });
+    }
+
+    let downArrow       = document.querySelector('.down_arrow_to_scroll');
+    let scrollsElements = document.getElementsByClassName('.arrow_scrolls_elem');
+    if (downArrow) {
+        downArrow.addEventListener('click', function () {
+            for (let i = 0; i < scrollsElements.length; i++) {
+                if (scrollsElements[i].getBoundingClientRect().top > 0) {
+                    scrollsElements[i].scrollIntoView();
+                    break;
+                }
+            }
+        });
     }
 };
