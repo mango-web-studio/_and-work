@@ -90,13 +90,13 @@
                     width: 25%;
                 }
 
-                .select_wrap {
-                    position: relative;
+                // .select_wrap {
+                //     position: relative;
 
-                    select {
-                        display: none; /*hide original SELECT element:*/
-                    }
-                }
+                //     select {
+                //         display: none; /*hide original SELECT element:*/
+                //     }
+                // }
 
                 /*style items (options):*/
                 .select-items {
@@ -129,31 +129,16 @@
                 }
 
                 .select-selected {
-                    @include font(18px, 20px, 'Roboto-Light');
-
-                    position: relative;
                     width: 140px;
-                    padding: 10%;
-                    border: 1px solid $black_1;
                     border-bottom: 0;
-                    background-color: $white_1;
-                    cursor: pointer;
                     white-space: nowrap;
-                    user-select: none;
 
                     /*style the arrow inside the select element:*/
                     &::after {
-                        position: absolute;
-                        content: "";
-                        top: 50%;
                         right: 14px;
                         width: 12px;
                         height: 12px;
-                        border: 1px solid transparent;
-                        border-color: transparent $black_1 $black_1 transparent;
-                        transform-origin: center center;
                         transform: translateY(-25%) rotate(-135deg);
-                        transition: 0.5s;
                     }
                     
                     /*point the arrow upwards when the select box is open (active):*/

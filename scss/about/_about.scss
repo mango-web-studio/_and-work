@@ -1,34 +1,22 @@
 .about {
 
-    .menu {
-
-        &_checkbox_input {
+    .menu_checkbox_input {
             
-            &:checked {
+        &:checked {
 
-                & ~ .header {
-
-                    .close_menu {
-                        display: block;
-                    }
-    
-                    .open_menu {
-                        display: none;
-                    }
-                }
-
-                & ~ .menu {
-                    opacity: 1;
-                    visibility: visible;
-                }
+            & ~ .left_marquee,
+            & ~ .right_marquee {
+                opacity: 1;
+                visibility: visible;
             }
+        }
 
-            &:not(:checked) {
+        &:not(:checked) {
 
-                & ~ .menu {
-                    opacity: 0;
-                    visibility: hidden;
-                }
+            & ~ .left_marquee,
+            & ~ .right_marquee {
+                opacity: 0;
+                visibility: hidden;
             }
         }
     }
@@ -76,7 +64,7 @@
 
             .about_item_inner {
                 @include font(16px, 20px, 'Roboto-Light');
-                
+
                 position: relative;
                 width: 79.76%;
                 margin: 0 auto;
@@ -207,6 +195,11 @@
         &_title  {
             margin-bottom: 6.05%;
         }
+    }
+
+    .left_marquee,
+    .right_marquee {
+        transition: 0.5s;
     }
 
     .achieve_marquee {

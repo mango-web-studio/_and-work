@@ -51,9 +51,6 @@ window.onload = function() {
             });
             b.appendChild(c);
         }
-        // for (let j = 0; j < selElmnt.length; j++) {
-
-        // }
         divWrapSelects[i].appendChild(b);
 
         a.addEventListener("click", function(e) {
@@ -87,8 +84,8 @@ window.onload = function() {
     document.addEventListener("click", closeAllSelect);
 
 
-    /* FOR NEWS PAGE */
-    /* Opens and closes news on the "news" page. */
+/* FOR NEWS PAGE */
+/* Opens and closes news on the "news" page. */
     let newsSection     = document.querySelectorAll('.news_main');
     let photos          = document.querySelectorAll('.news_portfolio_item');
     let newsDescription = document.querySelectorAll('.news_main_description');
@@ -128,8 +125,8 @@ window.onload = function() {
     }
     
 
-    /* FOR PRICE PAGE */
-    /* Opens and closes portfolio on the "price" page. */
+/* FOR PRICE PAGE */
+/* Opens and closes portfolio on the "price" page. */
     let portfolioLabel = document.querySelectorAll('.meeting_room_description_label');
     let portfolioPhoto = document.querySelectorAll('.price_portfolio_item');
 
@@ -148,5 +145,13 @@ window.onload = function() {
                 portfolioPhoto[i].style.display = "none";
             }
         }
+    }
+
+/* For positig the element with class name 'bottom_marquee_position' */
+    let bottomMarquee      = document.querySelector('.bottom_position_marquee')
+    let scrollingElem      = document.querySelector('.scrolling_elememnt')
+    let scrollingElemInner = document.querySelector('.scrolling_elememnt_inner')
+    if (bottomMarquee) {
+        
     }
 };

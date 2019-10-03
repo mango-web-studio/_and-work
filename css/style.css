@@ -285,8 +285,24 @@ button {
   background-color: #fff;
   z-index: 10;
   transition: 0.5s;
-  /*style items (options):*/
-  /*hide the items when the select box is closed:*/
+}
+
+.menu_checkbox_input:checked ~ .header .close_menu {
+  display: block;
+}
+
+.menu_checkbox_input:checked ~ .header .open_menu {
+  display: none;
+}
+
+.menu_checkbox_input:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu_checkbox_input:not(:checked) ~ .menu {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .menu_item_social_wrap {
@@ -319,74 +335,6 @@ button {
   text-decoration: underline;
 }
 
-.menu .select_wrap {
-  position: relative;
-}
-
-.menu .select_wrap select {
-  display: none;
-  /*hide original SELECT element:*/
-}
-
-.menu .select-items {
-  font: 1.8rem/2rem "Roboto-Light";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-top: 0;
-  z-index: 2;
-  /*style the items (options), including the selected item:*/
-}
-
-.menu .select-items div {
-  font: 1.8rem/2rem "Roboto-Light";
-  padding: 10%;
-  cursor: pointer;
-  user-select: none;
-}
-
-.menu .select-items div:hover {
-  text-decoration: underline;
-}
-
-.menu .select-selected {
-  font: 1.8rem/2rem "Roboto-Light";
-  position: relative;
-  padding: 10%;
-  border: 1px solid #000;
-  background-color: #fff;
-  cursor: pointer;
-  user-select: none;
-  margin-top: 5px;
-  /*style the arrow inside the select element:*/
-  /*point the arrow upwards when the select box is open (active):*/
-}
-
-.menu .select-selected::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  right: 25px;
-  width: 13px;
-  height: 13px;
-  border: 1px solid transparent;
-  border-color: transparent #000 #000 transparent;
-  transform-origin: center center;
-  transform: translateY(-75%) rotate(45deg);
-  transition: 0.5s;
-}
-
-.menu .select-selected.select-arrow-active::after {
-  transform: translateY(-25%) rotate(-135deg);
-}
-
-.menu .select-hide {
-  display: none;
-}
-
 .menu_checkbox_input:checked ~ .left .menu {
   opacity: 1;
   visibility: visible;
@@ -397,20 +345,14 @@ button {
   visibility: hidden;
 }
 
-.about .menu_checkbox_input:checked ~ .header .close_menu {
-  display: block;
-}
-
-.about .menu_checkbox_input:checked ~ .header .open_menu {
-  display: none;
-}
-
-.about .menu_checkbox_input:checked ~ .menu {
+.about .menu_checkbox_input:checked ~ .left_marquee,
+.about .menu_checkbox_input:checked ~ .right_marquee {
   opacity: 1;
   visibility: visible;
 }
 
-.about .menu_checkbox_input:not(:checked) ~ .menu {
+.about .menu_checkbox_input:not(:checked) ~ .left_marquee,
+.about .menu_checkbox_input:not(:checked) ~ .right_marquee {
   opacity: 0;
   visibility: hidden;
 }
@@ -560,6 +502,11 @@ button {
   margin-bottom: 6.05%;
 }
 
+.about .left_marquee,
+.about .right_marquee {
+  transition: 0.5s;
+}
+
 .about .achieve_marquee {
   position: absolute;
   left: 0;
@@ -677,15 +624,6 @@ button {
   width: 25%;
 }
 
-.meeting_room_description_tarrif_plan .select_wrap {
-  position: relative;
-}
-
-.meeting_room_description_tarrif_plan .select_wrap select {
-  display: none;
-  /*hide original SELECT element:*/
-}
-
 .meeting_room_description_tarrif_plan .select-items {
   font: 1.8rem/2rem "Roboto-Light";
   position: absolute;
@@ -714,32 +652,18 @@ button {
 }
 
 .meeting_room_description_tarrif_plan .select-selected {
-  font: 1.8rem/2rem "Roboto-Light";
-  position: relative;
   width: 140px;
-  padding: 10%;
-  border: 1px solid #000;
   border-bottom: 0;
-  background-color: #fff;
-  cursor: pointer;
   white-space: nowrap;
-  user-select: none;
   /*style the arrow inside the select element:*/
   /*point the arrow upwards when the select box is open (active):*/
 }
 
 .meeting_room_description_tarrif_plan .select-selected::after {
-  position: absolute;
-  content: "";
-  top: 50%;
   right: 14px;
   width: 12px;
   height: 12px;
-  border: 1px solid transparent;
-  border-color: transparent #000 #000 transparent;
-  transform-origin: center center;
   transform: translateY(-25%) rotate(-135deg);
-  transition: 0.5s;
 }
 
 .meeting_room_description_tarrif_plan .select-selected.select-arrow-active::after {
@@ -800,6 +724,10 @@ button {
 
 .price_portfolio_item:first-child {
   display: block;
+}
+
+.news .open {
+  cursor: auto;
 }
 
 .news .open .news_image_preview_wrap {
@@ -1175,4 +1103,73 @@ button {
   white-space: nowrap;
   text-align: center;
   color: #f00;
+}
+
+.select_wrap {
+  position: relative;
+  /*hide original SELECT element:*/
+}
+
+.select_wrap select {
+  display: none;
+}
+
+/*style items (options):*/
+.select-items {
+  font: 1.8rem/2rem "Roboto-Light";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-top: 0;
+  z-index: 2;
+  /*style the items (options), including the selected item:*/
+}
+
+.select-items div {
+  font: 1.8rem/2rem "Roboto-Light";
+  padding: 10%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-items div:hover {
+  text-decoration: underline;
+}
+
+.select-selected {
+  font: 1.8rem/2rem "Roboto-Light";
+  position: relative;
+  padding: 10%;
+  border: 1px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  user-select: none;
+  /*style the arrow inside the select element:*/
+  /*point the arrow upwards when the select box is open (active):*/
+}
+
+.select-selected::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 25px;
+  width: 13px;
+  height: 13px;
+  border: 1px solid transparent;
+  border-color: transparent #000 #000 transparent;
+  transform-origin: center center;
+  transform: translateY(-75%) rotate(45deg);
+  transition: 0.5s;
+}
+
+.select-selected.select-arrow-active::after {
+  transform: translateY(-25%) rotate(-135deg);
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
 }

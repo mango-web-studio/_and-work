@@ -8,6 +8,36 @@
     z-index: 10;
     transition: 0.5s;
 
+    &_checkbox_input {
+            
+        &:checked {
+
+            & ~ .header {
+
+                .close_menu {
+                    display: block;
+                }
+
+                .open_menu {
+                    display: none;
+                }
+            }
+
+            & ~ .menu {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:not(:checked) {
+
+            & ~ .menu {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
     &_item_social_wrap {
         position: absolute;
         top: 20%;
@@ -39,78 +69,6 @@
             color: $red_1;
             text-decoration: underline;
         }
-    }
-
-    .select_wrap {
-        position: relative;
-
-        select {
-            display: none; /*hide original SELECT element:*/
-        }
-    }
-
-    /*style items (options):*/
-    .select-items {
-        @include font(18px, 20px, 'Roboto-Light');
-
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: $white_1;
-        border: 1px solid $black_1;
-        border-top: 0;
-        z-index: 2;
-
-        /*style the items (options), including the selected item:*/
-        div {
-            @include font(18px, 20px, 'Roboto-Light');
-
-            padding: 10%;
-            cursor: pointer;
-            user-select: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .select-selected {
-        @include font(18px, 20px, 'Roboto-Light');
-
-        position: relative;
-        padding: 10%;
-        border: 1px solid $black_1;
-        background-color: $white_1;
-        cursor: pointer;
-        user-select: none;
-        margin-top: 5px;
-
-        /*style the arrow inside the select element:*/
-        &::after {
-            position: absolute;
-            content: "";
-            top: 50%;
-            right: 25px;
-            width: 13px;
-            height: 13px;
-            border: 1px solid transparent;
-            border-color: transparent $black_1 $black_1 transparent;
-            transform-origin: center center;
-            transform: translateY(-75%) rotate(45deg);
-            transition: 0.5s;
-        }
-
-        /*point the arrow upwards when the select box is open (active):*/
-        &.select-arrow-active::after {
-            transform: translateY(-25%) rotate(-135deg);
-        }
-    }
-
-    /*hide the items when the select box is closed:*/
-    .select-hide {
-        display: none;
     }
 }
 
