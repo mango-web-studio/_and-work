@@ -30,12 +30,12 @@ window.onload = function() {
                 for (let i = 0; i < s.length; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
                         s.selectedIndex = i;
-                        if (this.closest('.meeting_room_description_tarrif_plan')) {
+                        if (this.closest('.choose_tarrif_plan')) {
                             // the input element with class name "tarrif_input"
                             tarrifInput = this.parentElement.parentElement.parentElement.nextElementSibling.querySelector('input');
                             if (tarrifInput) {
                                 // write in the input element value of the slected option
-                                tarrifInput.value = s[s.selectedIndex].getAttribute('data-price');
+                                tarrifInput.value = `${s[s.selectedIndex].getAttribute('data-price')} uah`;
                             }
                         }
                         h.innerHTML = this.innerHTML;
@@ -147,7 +147,7 @@ window.onload = function() {
         }
     }
 
-/* For positig the element with class name 'bottom_marquee_position' */
+/* To display the element with class name 'bottom_marquee_position' after scrolling */
     let bottomMarquee = document.querySelector('.bottom_position_marquee');
     let scrollingElem = document.querySelector('.scrolling_element');
     let leftElem      = document.querySelector('.left');
@@ -163,13 +163,15 @@ window.onload = function() {
         });
     }
 
+
+/* To scroll smoothly by click the arrow (price.html) */
     let downArrow       = document.querySelector('.down_arrow_to_scroll');
-    let scrollsElements = document.getElementsByClassName('.arrow_scrolls_elem');
+    let scrollsElements = document.querySelectorAll('.arrow_scrolls_elem');
     if (downArrow) {
         downArrow.addEventListener('click', function () {
             for (let i = 0; i < scrollsElements.length; i++) {
                 if (scrollsElements[i].getBoundingClientRect().top > 0) {
-                    scrollsElements[i].scrollIntoView();
+                    scrollsElements[i].scrollIntoView({behavior: 'smooth'});
                     break;
                 }
             }

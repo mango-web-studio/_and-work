@@ -97,6 +97,57 @@
 				</svg>
 			</a>
 		</div>
+		<!-- Form -->
+		<div class="form_content">
+			<form name="application" action="" method="POST" class="form_application">
+				<div class="form_inner">
+					<div class="form_header">
+						<p class="form_title">
+							ОФОРМЛЕННЯ ЗАЯВКИ
+						</p>
+						<div class="select_wrap">
+							<select name="currency" class="form_currency">
+								<option value="UAH">UAH</option>
+								<option value="RUB">RUB</option>
+								<option value="USD">USD</option>
+							</select>
+						</div>
+					</div>
+					<div class="form_main_content">
+						<div class="form_content_left">
+							<div class="select_wrap">
+								<select name="space" class="form_currency">
+									<option value="1">Open Space 1</option>
+									<option value="2">Open Space 2</option>
+									<option value="3">Open Space 3</option>
+								</select>
+							</div>
+							<input class="form_client_info" name="full_name" type="text"  placeholder="Ім'я">
+							<input class="form_client_info" name="email"     type="email" placeholder="Email">
+							<input class="form_client_info" name="phone"     type="tel"   placeholder="Телефон*" required>
+						</div>
+						<div class="form_content_right">
+							<div class="form_content_right_inner choose_tarrif_plan">
+								<p class="title">Тарифний план</p>
+								<div class="select_wrap">
+									<select class="tarrif_select" name="tariff_plan">
+										<option value="55" data-price="55">1 день</option>
+										<option value="500" data-price="500">1 тиждень</option>
+										<option value="1500" data-price="1500">1 місяць</option>
+										<option value="1500" data-price="15000">1 рік</option>
+									</select>
+								</div>
+							</div>
+							<div class="form_content_right_inner choose_tarrif_plan">
+								<p class="title">Ціна</p>
+								<input class="tarrif_input" type="text" value="55 uah" name="cost" readonly>
+							</div>
+							<input class="tarrif_submit" type="submit" value="відправити">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 
 	</div>
 
