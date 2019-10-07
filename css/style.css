@@ -157,6 +157,7 @@ button {
   width: 11.25%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .right_marquee_svg {
@@ -809,8 +810,22 @@ button {
   height: 28px;
 }
 
+.price_portfolio_list {
+  position: relative;
+}
+
+.price_portfolio_item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
 .price_portfolio_item:first-child {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .news .open {
@@ -1030,11 +1045,21 @@ button {
 }
 
 .news_portfolio_item {
-  display: none;
+  position: relative;
+}
+
+.news_portfolio_item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
 }
 
 .news_portfolio_item:first-child {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .news_section {
@@ -1274,7 +1299,7 @@ button {
 
 .form_content_right .tarrif_submit {
   font: 2rem/2.2rem "Roboto-Regular";
-  width: 140px;
+  width: 175px;
   padding: 3.7% 0;
   color: #fff;
   border: 1px solid #f00;

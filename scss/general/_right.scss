@@ -33,6 +33,7 @@
         width: 11.25%;
         height: 100%;
         pointer-events: none;
+        z-index: 1;
 
         &_svg {
             fill: $red_1;

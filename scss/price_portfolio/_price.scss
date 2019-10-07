@@ -210,9 +210,23 @@
     }
 }
 
-.price_portfolio_item {
+.price_portfolio {
 
-    &:first-child {
-        display: block;
+    &_list {
+        position: relative;
+    }
+
+    &_item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        
+        &:first-child {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }

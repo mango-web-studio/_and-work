@@ -107,10 +107,14 @@ window.onload = function() {
 
         for (let i = 0; i < newsSection.length; i++) {
             if (elem == newsSection[i]) {
-                photos[i].style.display = "block";
+                // photos[i].style.display = "block";
+                photos[i].style.opacity = 1;
+                photos[i].style.visibility = 'visible';
                 currentNewsDescription.style.height = `${newsDescription[i].offsetHeight}px`;
             } else {
-                photos[i].style.display = "none";
+                // photos[i].style.display = "none";
+                photos[i].style.opacity = 0;
+                photos[i].style.visibility = 'hidden';
                 newsDescription[i].parentNode.style.height = '0px';
                 newsSection[i].classList.remove('open');
             }
@@ -127,22 +131,24 @@ window.onload = function() {
 
 /* FOR PRICE PAGE */
 /* Opens and closes portfolio on the "price" page. */
-    let portfolioLabel = document.querySelectorAll('.meeting_room_description_label');
-    let portfolioPhoto = document.querySelectorAll('.price_portfolio_item');
+    let portfolioLabels = document.querySelectorAll('.meeting_room_description_label');
+    let portfolioPhotos = document.querySelectorAll('.price_portfolio_item');
 
-    for (let i = 0; i < portfolioLabel.length; i++) {
-        portfolioLabel[i].addEventListener("click", function() {
+    for (let i = 0; i < portfolioLabels.length; i++) {
+        portfolioLabels[i].addEventListener("click", function() {
             openPortfolio(this);
         });
     }
     // when you click on the block the news opens
     function openPortfolio(elem) {
-
-        for (let i = 0; i < portfolioLabel.length; i++) {
-            if (elem == portfolioLabel[i]) {
-                portfolioPhoto[i].style.display = 'block';
+        console.log('label');
+        for (let i = 0; i < portfolioLabels.length; i++) {
+            if (elem == portfolioLabels[i]) {
+                portfolioPhotos[i].style.opacity = 1;
+                portfolioPhotos[i].style.visibility = 'visible';
             } else {
-                portfolioPhoto[i].style.display = "none";
+                portfolioPhotos[i].style.opacity = 0;
+                portfolioPhotos[i].style.visibility = 'hidden';
             }
         }
     }
@@ -172,9 +178,24 @@ window.onload = function() {
             for (let i = 0; i < scrollsElements.length; i++) {
                 if (scrollsElements[i].getBoundingClientRect().top > 0) {
                     scrollsElements[i].scrollIntoView({behavior: 'smooth'});
+                    for (let j = 0; j < portfolioPhotos.length; j++) {
+                        if ( i == j) {
+                            portfolioPhotos[j].style.opacity = 1;
+                            portfolioPhotos[j].style.visibility = 'visible';
+                        } else {
+                            portfolioPhotos[j].style.opacity = 0;
+                            portfolioPhotos[j].style.visibility = 'hidden';
+                        }
+                    }
                     break;
                 }
             }
         });
     }
+
+/* FOR PHONE PAGE */
+/* Сreates a mask for entering a phone number */
+    let phoneInput = document.getElementById("phone");
+    let phoneMask = new Inputmask("+38(999)-999-99-99");
+    phoneMask.mask(phoneInput);
 };

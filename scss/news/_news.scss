@@ -244,10 +244,22 @@
 // Right side
 
     &_portfolio_item {
-        display: none;
+        position: relative; 
+    }
+
+    &_portfolio_item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+        // display: none;
 
         &:first-child {
-            display: block;
+            // display: block;
+            opacity: 1;
+            visibility: visible;
         }
     }
 
