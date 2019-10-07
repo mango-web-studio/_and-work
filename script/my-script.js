@@ -169,14 +169,13 @@ window.onload = function() {
         });
     }
 
-
 /* To scroll smoothly by click the arrow (price.html) */
     let downArrow       = document.querySelector('.down_arrow_to_scroll');
     let scrollsElements = document.querySelectorAll('.arrow_scrolls_elem');
     if (downArrow) {
         downArrow.addEventListener('click', function () {
             for (let i = 0; i < scrollsElements.length; i++) {
-                if (scrollsElements[i].getBoundingClientRect().top > 0) {
+                if (scrollsElements[i].getBoundingClientRect().top.toFixed() > 0) {
                     scrollsElements[i].scrollIntoView({behavior: 'smooth'});
                     for (let j = 0; j < portfolioPhotos.length; j++) {
                         if ( i == j) {
@@ -195,7 +194,9 @@ window.onload = function() {
 
 /* FOR PHONE PAGE */
 /* Сreates a mask for entering a phone number */
-    let phoneInput = document.getElementById("phone");
-    let phoneMask = new Inputmask("+38(999)-999-99-99");
-    phoneMask.mask(phoneInput);
+    if (document.getElementById("phone")) {
+        let phoneInput = document.getElementById("phone");
+        let phoneMask = new Inputmask("+38(999)-999-99-99");
+        phoneMask.mask(phoneInput);
+    }
 };
