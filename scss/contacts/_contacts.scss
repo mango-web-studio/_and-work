@@ -1,4 +1,7 @@
 .contacts {
+    display: flex;
+    width: 100%;
+    height: 100%;
 
     &_content {
         position: absolute;
@@ -41,10 +44,10 @@
         letter-spacing: 2px;
         margin-bottom: 5.46%;
     }
-    
+
     &_description {
         @include font(18px, 22px, 'Roboto-Light');
-        
+
         letter-spacing: 2px;
         margin-bottom: 9.82%;
     }
@@ -56,7 +59,7 @@
             text-decoration: underline;
         }
     }
-    
+
     &_mail {
         color: $black_1;
 

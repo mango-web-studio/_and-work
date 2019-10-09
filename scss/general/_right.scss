@@ -12,7 +12,7 @@
                         display: none;
                     }
     
-                    &_bg.menu_open {
+                    &_bg_menu_open {
                         display: block;
                     }
                 }
@@ -47,7 +47,7 @@
         height: 100%;
         object-fit: cover;
 
-        &_bg.menu_open {
+        &_menu_open {
             display: none;
             width: 100%;
             height: 100%;

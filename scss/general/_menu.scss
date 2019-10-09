@@ -71,22 +71,3 @@
         }
     }
 }
-
-.menu_checkbox_input {
-
-    &:checked {
-
-        & ~ .left .menu {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
-    &:not(:checked) {
-
-        & ~ .left .menu {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-}

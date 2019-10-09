@@ -1,4 +1,7 @@
 .news {
+    display: flex;
+    width: 100%;
+    height: 100%;
 
     .open {
         cursor: auto;
@@ -11,7 +14,7 @@
 
             &_header {
                 margin-bottom: 5.15%;
-                
+
                 &_description {
                     width: 100%;
                     padding-left: 0;
@@ -57,12 +60,12 @@
         &::-webkit-scrollbar {
             display: none; 
         }
-        
+
         &_outer {
             height: 100%;
             overflow: hidden;
         }
-        
+
         &_inner {
             width: calc( 100% - 17px);
             padding: 18% 0 14%;
@@ -231,7 +234,7 @@
             color: $white_1;
             background-color: $red_1;
             border: 1px solid $red_1;
-            
+
             &:hover {
                 color: $red_1;
                 background-color: $white_1;

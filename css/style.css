@@ -140,7 +140,7 @@ button {
   display: none;
 }
 
-.home .menu_checkbox_input:checked ~ .right .right_bg.menu_open {
+.home .menu_checkbox_input:checked ~ .right .right_bg_menu_open {
   display: block;
 }
 
@@ -172,7 +172,7 @@ button {
   object-fit: cover;
 }
 
-.right_bg_bg.menu_open {
+.right_bg_menu_open {
   display: none;
   width: 100%;
   height: 100%;
@@ -229,10 +229,6 @@ button {
 .button_book_now:hover path:last-child {
   fill: #f00;
   stroke: #f00;
-}
-
-.home .logo_svg:hover {
-  fill: #000;
 }
 
 .header {
@@ -342,16 +338,6 @@ button {
   text-decoration: underline;
 }
 
-.menu_checkbox_input:checked ~ .left .menu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.menu_checkbox_input:not(:checked) ~ .left .menu {
-  opacity: 0;
-  visibility: hidden;
-}
-
 .select_wrap {
   position: relative;
   /*hide original SELECT element:*/
@@ -421,16 +407,34 @@ button {
   display: none;
 }
 
-.about .menu_checkbox_input:checked ~ .left_marquee,
-.about .menu_checkbox_input:checked ~ .right_marquee {
-  opacity: 1;
-  visibility: visible;
+.home {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
-.about .menu_checkbox_input:not(:checked) ~ .left_marquee,
-.about .menu_checkbox_input:not(:checked) ~ .right_marquee {
+.home .logo_svg:hover {
+  fill: #000;
+}
+
+.menu_checkbox_input:checked ~ .left_marquee_about,
+.menu_checkbox_input:checked ~ .right_marquee_about {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+.menu_checkbox_input:not(:checked) ~ .left_marquee_about,
+.menu_checkbox_input:not(:checked) ~ .right_marquee_about {
   opacity: 0;
   visibility: hidden;
+  transition: 0.5s;
+}
+
+.about {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .about_content {
@@ -614,6 +618,12 @@ button {
 .about .speak_marquee_svg {
   fill: #f00;
   margin: auto;
+}
+
+.price {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .price .left {
@@ -825,6 +835,12 @@ button {
 .price_portfolio_item:first-child {
   opacity: 1;
   visibility: visible;
+}
+
+.news {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .news .open {
@@ -1080,6 +1096,12 @@ button {
   width: 100%;
 }
 
+.contacts {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 .contacts_content {
   position: absolute;
   left: 50%;
@@ -1147,6 +1169,12 @@ button {
   width: 50%;
   height: 230px;
   mix-blend-mode: luminosity;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .form_content {
@@ -1312,6 +1340,12 @@ button {
   background-color: #fff;
 }
 
+.thanks {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 .thanks_content {
   position: absolute;
   left: 50%;
@@ -1359,6 +1393,12 @@ button {
   letter-spacing: 2px;
   margin-bottom: 9.82%;
   color: #fff;
+}
+
+.error {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .error_content {
