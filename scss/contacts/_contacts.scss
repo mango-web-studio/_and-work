@@ -74,3 +74,61 @@
         mix-blend-mode: luminosity;
     }
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .contacts {
+        position: relative;
+
+        .left {
+            position: absolute;
+            height: 100%;
+        }
+
+        .right {
+            position: absolute;
+            height: 100%;
+            padding: 45px 0 0;
+        }
+
+        &_content {
+            width: 100%;
+            background-color: transparent;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &_title {
+            @include font(30px, 46px, 'Roboto-Black');
+
+            color: $red_1;
+        }
+
+        &_description {
+            @include font(22px, 26px, 'Roboto-Black');
+
+            color: $white_1;
+            letter-spacing: 2px;
+        }
+
+        &_phone {
+            color: $white_1;
+        }
+
+        &_mail {
+            color: $white_1;
+        }
+
+        &_frame {
+            width: 100%;
+        }
+    }
+}

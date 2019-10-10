@@ -64,3 +64,15 @@
     opacity: 0;
     transition: 0.5s;
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .red_line_vrtcl {
+
+        & + .red_line_vrtcl {
+            display: none;
+        }
+    }
+}

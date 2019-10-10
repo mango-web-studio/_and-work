@@ -22,3 +22,32 @@
         color: $red_1;
     }
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .error {
+        position: relative;
+        flex-direction: column;
+
+        .left {
+            position: absolute;
+            height: 100%;
+        }
+
+        .right {
+            position: absolute;
+            height: 100%;
+            padding: 45px 0 0;
+        }
+
+        &_content {
+            padding: 0;
+        }
+
+        &_title {
+            @include font(50px, 60px, 'Roboto-Bold');
+        }
+    }
+}

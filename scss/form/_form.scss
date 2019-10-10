@@ -163,10 +163,79 @@
             background-color: $red_1;
             margin-top: 20px;
             cursor: pointer;
-            
+
             &:hover {
                 color: $red_1;
                 background-color: $white_1;
+            }
+        }
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .form {
+
+        &_content {
+            padding: 45px 20px 80px;
+        }
+
+        &_application {
+            height: 100%;
+            padding: 0;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &_inner {
+            padding: 30px 0 20px;
+
+            .select_wrap {
+                width: auto;
+            }
+
+            .select-selected {
+                width: 80px;
+                margin: 0 auto;
+                padding: 10% 5%;
+
+                &::after {
+                    right: 12px;
+                }
+            }
+        }
+
+        &_main_content {
+            flex-direction: column;
+            height: 580px;
+        }
+
+        &_content {
+
+            &_left {
+                width: 100%;
+
+                .select-selected {
+                    width: 100%;
+                    padding: 4%;
+                }
+            }
+
+            &_right {
+                width: 100%;
+                text-align: center;
+
+                .select-selected {
+                    width: 140px;
+                }
             }
         }
     }

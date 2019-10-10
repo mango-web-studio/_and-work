@@ -55,3 +55,18 @@
         }
     }
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .right {
+        height: 50vh;
+        width: 100%;
+        padding: 45px 20px 0;
+
+        &_marquee {
+            display: none;
+        }
+    }
+}

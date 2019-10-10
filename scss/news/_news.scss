@@ -138,6 +138,7 @@
     &_header {
         display: flex;
         margin-bottom: 0;
+        transition: 0.5s;
 
         &_description {
             width: 75%;
@@ -246,33 +247,36 @@
 
 // Right side
 
-    &_portfolio_item {
-        position: relative; 
-    }
+    &_portfolio {
+        height: 100%;
 
-    &_portfolio_item {
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.5s;
-        // display: none;
+        &_list {
+            position: relative;
+            height: 100%;
+        }
 
-        &:first-child {
-            // display: block;
-            opacity: 1;
-            visibility: visible;
+        &_item {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+    
+            &:first-child {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
     &_section {
-        height: 100vh;
+        height: 100%;
         overflow: hidden;
     }
 
     &_list {
-        height: 100%;
+        height: 100vh;
         width: calc( 100% + 17px );
         overflow-y: scroll;
     }
@@ -283,5 +287,95 @@
 
     &_img {
         width: 100%;
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .news {
+        flex-direction: column;
+
+        &_portfolio_item {
+            height: 100%;
+        }
+
+        &_section {
+            height: 100%;
+        }
+
+        &_container_inner {
+            padding: 30px 20px 90px;
+        }
+
+        &_list {
+            height: 100%;
+        }
+
+        &_container_item {
+            margin-bottom: 50px;
+        }
+
+        &_main {
+            width: 100%;
+            padding: 0;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &_image_preview_wrap {
+            display: none;
+        }
+
+        &_header_description {
+            width: 100%;
+            padding: 0;
+        }
+
+        &_title_description {
+            @include font(20px, 24px, 'Roboto-Black');
+
+            &_date {
+                @include font(20px, 24px, 'Roboto-Regular');
+            }
+        }
+        
+        .open {
+
+            .news_title_description {
+                @include font(20px, 24px, 'Roboto-Black');
+    
+                text-decoration: none;
+            }
+
+            .news_title_description_date {
+                @include font(20px, 24px, 'Roboto-Regular');
+            }
+        }
+
+        &_container_load_more {
+            width: 175px;
+            margin: auto;
+        }
+
+        &_content {
+            margin-bottom: 50px;
+        }
+
+        &_footer {
+            flex-direction: column;
+
+            &_censorship {
+                align-self: flex-start;
+                margin-bottom: 15px;
+            }
+        }
     }
 }

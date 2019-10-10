@@ -167,7 +167,7 @@
                 color: $white_1;
                 background-color: $red_1;
                 border: 1px solid $red_1;
-                width: 28.13%;
+                width: 180px;
                 padding: 0;
                 cursor: pointer;
 
@@ -202,7 +202,7 @@
 
 .down_arrow_to_scroll {
     position: fixed;
-    right: calc(50% + 25px);
+    right: calc(50% + 40px);
     bottom: 20px;
     cursor: pointer;
 
@@ -229,6 +229,53 @@
         &:first-child {
             opacity: 1;
             visibility: visible;
+        }
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .down_arrow_to_scroll {
+        display: none;
+    }
+
+    .price {
+        flex-direction: column;
+
+        &_portfolio {
+            height: 100%;
+            
+            &_list {
+                height: 100%;
+            }
+
+            &_item {
+                height: 100%;
+            }
+        }
+
+        .meeting_room {
+
+            &_section {
+                height: 100%;
+            }
+
+            &_list {
+                height: 100%;
+            }
+        }
+
+        .meeting_room_container_description {
+
+            &_list {
+                padding: 0 0 30%;
+            }
+
+            &_item {
+                padding: 10% 0 0;
+            }
         }
     }
 }

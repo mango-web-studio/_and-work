@@ -10,7 +10,6 @@
         transform: translate(-50%, -50%);
         width: 62.5%;
         padding: 3.47%;
-        background-color: $white_1;
         z-index: 1;
 
         &::before {
@@ -45,12 +44,68 @@
         margin-bottom: 6.25%;
         color: $white_1;
     }
-    
+
     &_description {
         @include font(20px, 24px, 'Roboto-Regular');
-        
+
         letter-spacing: 2px;
         margin-bottom: 9.82%;
         color: $white_1;
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .thanks {
+        position: relative;
+
+        .left {
+            position: absolute;
+            height: 100%;
+        }
+
+        .right {
+            position: absolute;
+            height: 100%;
+            padding: 45px 0 0;
+
+            &_marquee {
+                display: block;
+                width: 70px;
+                left: unset;
+                right: 0;
+            }
+        }
+
+        &_content {
+            transform: unset;
+            left: 20px;
+            top: unset;
+            width: 280px;
+            bottom: 130px;
+            padding: 0;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        &_title {
+            @include font(30px, 46px, 'Roboto-Black');
+
+            color: $red_1;
+        }
+
+        &_description {
+            @include font(22px, 26px, 'Roboto-Black');
+
+            letter-spacing: 2px;
+        }
     }
 }

@@ -10,3 +10,31 @@
         }
     }
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .home {
+        position: relative;
+
+        .left_marquee {
+            display: block;
+            width: 100%;
+            left: 0;
+            bottom: 10px;
+            transform: rotate(0);
+        }
+
+        .left {
+            position: absolute;
+            height: 100%;
+        }
+
+        .right {
+            position: absolute;
+            height: 100%;
+            padding: 45px 0 0;
+        }
+    }
+}

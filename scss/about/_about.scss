@@ -1,4 +1,3 @@
-
 .menu_checkbox_input {
 
     &:checked {
@@ -7,19 +6,15 @@
         & ~ .right_marquee_about {
             opacity: 1;
             visibility: visible;
-            transition: 0.5s;
         }
     }
+}
 
-    &:not(:checked) {
-
-        & ~ .left_marquee_about,
-        & ~ .right_marquee_about {
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.5s;
-        }
-    }
+.left_marquee_about,
+.right_marquee_about {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
 }
 
 .about {
@@ -238,6 +233,113 @@
         &_svg {
             fill: $red_1;
             margin: auto;
+        }
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .left_marquee_about {
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        transform: none;
+    }
+
+    .right_marquee_about {
+        display: none;
+    }
+
+    .about {
+
+        .speak_marquee {
+            display: none;
+        }
+
+        &_content_inner {
+            padding: 45px 30px 60px;
+
+            .bottom_marquee {
+                position: absolute;
+                bottom: 10px;
+            }
+        }
+
+        &_list {
+            flex-direction: column;
+        }
+
+        &_item {
+            width: 100%;
+            margin-bottom: 30px;
+
+            &:first-child {
+                order: 2;
+
+                .about_item_inner {
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-child(2) {
+                order: 1;
+            }
+
+            &:nth-child(3) {
+                order: 4;
+
+                .about_item_inner {
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-child(4) {
+                order: 3;
+
+                .about_item_img {
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+            }
+
+            &:nth-child(5) {
+                order: 6;
+
+                .about_item_inner {
+                    margin: 0;
+                }
+            }
+
+            &:last-child {
+                order: 5;
+
+                .about_item_inner {
+                    margin: 0;
+                }
+            }
+
+            &:nth-child(2n+1) {
+
+                .about_item_inner {
+                    width: 100%;
+                    padding: 8.7%;
+                    padding-bottom: 11.6%;
+                }
+            }
+
+            &_img {
+                width: 100%;
+            }
+        }
+
+        .achieve_marquee {
+            top: 10%;
+        }
+
+        .learn_marquee {
+            top: 35%;
         }
     }
 }

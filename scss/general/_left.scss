@@ -53,3 +53,18 @@
         }
     }
 }
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .left {
+        height: 50vh;
+        width: 100%;
+        order: 2;
+
+        &_marquee {
+            display: none;
+        }
+    }
+}

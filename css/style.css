@@ -136,6 +136,12 @@ button {
   transition: 0.5s;
 }
 
+@media only screen and (max-width: 425px) {
+  .red_line_vrtcl + .red_line_vrtcl {
+    display: none;
+  }
+}
+
 .home .menu_checkbox_input:checked ~ .right .right_bg {
   display: none;
 }
@@ -177,6 +183,17 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 425px) {
+  .right {
+    height: 50vh;
+    width: 100%;
+    padding: 45px 20px 0;
+  }
+  .right_marquee {
+    display: none;
+  }
 }
 
 .left {
@@ -231,6 +248,17 @@ button {
   stroke: #f00;
 }
 
+@media only screen and (max-width: 425px) {
+  .left {
+    height: 50vh;
+    width: 100%;
+    order: 2;
+  }
+  .left_marquee {
+    display: none;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -279,6 +307,12 @@ button {
   fill: #f00;
 }
 
+@media only screen and (max-width: 425px) {
+  .header {
+    width: 100%;
+  }
+}
+
 .menu {
   position: fixed;
   left: 0;
@@ -287,6 +321,8 @@ button {
   width: 50%;
   background-color: #fff;
   z-index: 10;
+  opacity: 0;
+  pointer-events: none;
   transition: 0.5s;
 }
 
@@ -301,11 +337,7 @@ button {
 .menu_checkbox_input:checked ~ .menu {
   opacity: 1;
   visibility: visible;
-}
-
-.menu_checkbox_input:not(:checked) ~ .menu {
-  opacity: 0;
-  visibility: hidden;
+  pointer-events: all;
 }
 
 .menu_item_social_wrap {
@@ -328,6 +360,16 @@ button {
   text-decoration: underline;
 }
 
+.menu_link a {
+  font: 2.2rem/2.4rem "Roboto-Light";
+  color: #000;
+}
+
+.menu_link a:hover, .menu_link a_active {
+  color: #f00;
+  text-decoration: underline;
+}
+
 .menu_social_link {
   font: 2.2rem/2.4rem "Roboto-Light";
   color: #000;
@@ -336,6 +378,12 @@ button {
 .menu_social_link:hover {
   color: #f00;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 425px) {
+  .menu {
+    width: 100%;
+  }
 }
 
 .select_wrap {
@@ -417,15 +465,36 @@ button {
   fill: #000;
 }
 
+@media only screen and (max-width: 425px) {
+  .home {
+    position: relative;
+  }
+  .home .left_marquee {
+    display: block;
+    width: 100%;
+    left: 0;
+    bottom: 10px;
+    transform: rotate(0);
+  }
+  .home .left {
+    position: absolute;
+    height: 100%;
+  }
+  .home .right {
+    position: absolute;
+    height: 100%;
+    padding: 45px 0 0;
+  }
+}
+
 .menu_checkbox_input:checked ~ .left_marquee_about,
 .menu_checkbox_input:checked ~ .right_marquee_about {
   opacity: 1;
   visibility: visible;
-  transition: 0.5s;
 }
 
-.menu_checkbox_input:not(:checked) ~ .left_marquee_about,
-.menu_checkbox_input:not(:checked) ~ .right_marquee_about {
+.left_marquee_about,
+.right_marquee_about {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
@@ -620,6 +689,83 @@ button {
   margin: auto;
 }
 
+@media only screen and (max-width: 425px) {
+  .left_marquee_about {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    transform: none;
+  }
+  .right_marquee_about {
+    display: none;
+  }
+  .about .speak_marquee {
+    display: none;
+  }
+  .about_content_inner {
+    padding: 45px 30px 60px;
+  }
+  .about_content_inner .bottom_marquee {
+    position: absolute;
+    bottom: 10px;
+  }
+  .about_list {
+    flex-direction: column;
+  }
+  .about_item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .about_item:first-child {
+    order: 2;
+  }
+  .about_item:first-child .about_item_inner {
+    margin-top: 0;
+  }
+  .about_item:nth-child(2) {
+    order: 1;
+  }
+  .about_item:nth-child(3) {
+    order: 4;
+  }
+  .about_item:nth-child(3) .about_item_inner {
+    margin-top: 0;
+  }
+  .about_item:nth-child(4) {
+    order: 3;
+  }
+  .about_item:nth-child(4) .about_item_img {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .about_item:nth-child(5) {
+    order: 6;
+  }
+  .about_item:nth-child(5) .about_item_inner {
+    margin: 0;
+  }
+  .about_item:last-child {
+    order: 5;
+  }
+  .about_item:last-child .about_item_inner {
+    margin: 0;
+  }
+  .about_item:nth-child(2n+1) .about_item_inner {
+    width: 100%;
+    padding: 8.7%;
+    padding-bottom: 11.6%;
+  }
+  .about_item_img {
+    width: 100%;
+  }
+  .about .achieve_marquee {
+    top: 10%;
+  }
+  .about .learn_marquee {
+    top: 35%;
+  }
+}
+
 .price {
   display: flex;
   width: 100%;
@@ -777,7 +923,7 @@ button {
   color: #fff;
   background-color: #f00;
   border: 1px solid #f00;
-  width: 28.13%;
+  width: 180px;
   padding: 0;
   cursor: pointer;
 }
@@ -809,7 +955,7 @@ button {
 
 .down_arrow_to_scroll {
   position: fixed;
-  right: calc(50% + 25px);
+  right: calc(50% + 40px);
   bottom: 20px;
   cursor: pointer;
 }
@@ -835,6 +981,36 @@ button {
 .price_portfolio_item:first-child {
   opacity: 1;
   visibility: visible;
+}
+
+@media only screen and (max-width: 425px) {
+  .down_arrow_to_scroll {
+    display: none;
+  }
+  .price {
+    flex-direction: column;
+  }
+  .price_portfolio {
+    height: 100%;
+  }
+  .price_portfolio_list {
+    height: 100%;
+  }
+  .price_portfolio_item {
+    height: 100%;
+  }
+  .price .meeting_room_section {
+    height: 100%;
+  }
+  .price .meeting_room_list {
+    height: 100%;
+  }
+  .price .meeting_room_container_description_list {
+    padding: 0 0 30%;
+  }
+  .price .meeting_room_container_description_item {
+    padding: 10% 0 0;
+  }
 }
 
 .news {
@@ -966,6 +1142,7 @@ button {
 .news_header {
   display: flex;
   margin-bottom: 0;
+  transition: 0.5s;
 }
 
 .news_header_description {
@@ -1059,8 +1236,13 @@ button {
   border: 1px solid #f00;
 }
 
-.news_portfolio_item {
+.news_portfolio {
+  height: 100%;
+}
+
+.news_portfolio_list {
   position: relative;
+  height: 100%;
 }
 
 .news_portfolio_item {
@@ -1078,12 +1260,12 @@ button {
 }
 
 .news_section {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
 .news_list {
-  height: 100%;
+  height: 100vh;
   width: calc( 100% + 17px);
   overflow-y: scroll;
 }
@@ -1094,6 +1276,71 @@ button {
 
 .news_img {
   width: 100%;
+}
+
+@media only screen and (max-width: 425px) {
+  .news {
+    flex-direction: column;
+  }
+  .news_portfolio_item {
+    height: 100%;
+  }
+  .news_section {
+    height: 100%;
+  }
+  .news_container_inner {
+    padding: 30px 20px 90px;
+  }
+  .news_list {
+    height: 100%;
+  }
+  .news_container_item {
+    margin-bottom: 50px;
+  }
+  .news_main {
+    width: 100%;
+    padding: 0;
+  }
+  .news_main::before {
+    display: none;
+  }
+  .news_main::after {
+    display: none;
+  }
+  .news_image_preview_wrap {
+    display: none;
+  }
+  .news_header_description {
+    width: 100%;
+    padding: 0;
+  }
+  .news_title_description {
+    font: 2rem/2.4rem "Roboto-Black";
+  }
+  .news_title_description_date {
+    font: 2rem/2.4rem "Roboto-Regular";
+  }
+  .news .open .news_title_description {
+    font: 2rem/2.4rem "Roboto-Black";
+    text-decoration: none;
+  }
+  .news .open .news_title_description_date {
+    font: 2rem/2.4rem "Roboto-Regular";
+  }
+  .news_container_load_more {
+    width: 175px;
+    margin: auto;
+  }
+  .news_content {
+    margin-bottom: 50px;
+  }
+  .news_footer {
+    flex-direction: column;
+  }
+  .news_footer_censorship {
+    align-self: flex-start;
+    margin-bottom: 15px;
+  }
 }
 
 .contacts {
@@ -1169,6 +1416,49 @@ button {
   width: 50%;
   height: 230px;
   mix-blend-mode: luminosity;
+}
+
+@media only screen and (max-width: 425px) {
+  .contacts {
+    position: relative;
+  }
+  .contacts .left {
+    position: absolute;
+    height: 100%;
+  }
+  .contacts .right {
+    position: absolute;
+    height: 100%;
+    padding: 45px 0 0;
+  }
+  .contacts_content {
+    width: 100%;
+    background-color: transparent;
+  }
+  .contacts_content::before {
+    display: none;
+  }
+  .contacts_content::after {
+    display: none;
+  }
+  .contacts_title {
+    font: 3rem/4.6rem "Roboto-Black";
+    color: #f00;
+  }
+  .contacts_description {
+    font: 2.2rem/2.6rem "Roboto-Black";
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  .contacts_phone {
+    color: #fff;
+  }
+  .contacts_mail {
+    color: #fff;
+  }
+  .contacts_frame {
+    width: 100%;
+  }
 }
 
 .form {
@@ -1340,6 +1630,54 @@ button {
   background-color: #fff;
 }
 
+@media only screen and (max-width: 425px) {
+  .form_content {
+    padding: 45px 20px 80px;
+  }
+  .form_application {
+    height: 100%;
+    padding: 0;
+  }
+  .form_application::before {
+    display: none;
+  }
+  .form_application::after {
+    display: none;
+  }
+  .form_inner {
+    padding: 30px 0 20px;
+  }
+  .form_inner .select_wrap {
+    width: auto;
+  }
+  .form_inner .select-selected {
+    width: 80px;
+    margin: 0 auto;
+    padding: 10% 5%;
+  }
+  .form_inner .select-selected::after {
+    right: 12px;
+  }
+  .form_main_content {
+    flex-direction: column;
+    height: 580px;
+  }
+  .form_content_left {
+    width: 100%;
+  }
+  .form_content_left .select-selected {
+    width: 100%;
+    padding: 4%;
+  }
+  .form_content_right {
+    width: 100%;
+    text-align: center;
+  }
+  .form_content_right .select-selected {
+    width: 140px;
+  }
+}
+
 .thanks {
   display: flex;
   width: 100%;
@@ -1353,7 +1691,6 @@ button {
   transform: translate(-50%, -50%);
   width: 62.5%;
   padding: 3.47%;
-  background-color: #fff;
   z-index: 1;
 }
 
@@ -1395,6 +1732,49 @@ button {
   color: #fff;
 }
 
+@media only screen and (max-width: 425px) {
+  .thanks {
+    position: relative;
+  }
+  .thanks .left {
+    position: absolute;
+    height: 100%;
+  }
+  .thanks .right {
+    position: absolute;
+    height: 100%;
+    padding: 45px 0 0;
+  }
+  .thanks .right_marquee {
+    display: block;
+    width: 70px;
+    left: unset;
+    right: 0;
+  }
+  .thanks_content {
+    transform: unset;
+    left: 20px;
+    top: unset;
+    width: 280px;
+    bottom: 130px;
+    padding: 0;
+  }
+  .thanks_content::before {
+    display: none;
+  }
+  .thanks_content::after {
+    display: none;
+  }
+  .thanks_title {
+    font: 3rem/4.6rem "Roboto-Black";
+    color: #f00;
+  }
+  .thanks_description {
+    font: 2.2rem/2.6rem "Roboto-Black";
+    letter-spacing: 2px;
+  }
+}
+
 .error {
   display: flex;
   width: 100%;
@@ -1417,4 +1797,26 @@ button {
   white-space: nowrap;
   text-align: center;
   color: #f00;
+}
+
+@media only screen and (max-width: 425px) {
+  .error {
+    position: relative;
+    flex-direction: column;
+  }
+  .error .left {
+    position: absolute;
+    height: 100%;
+  }
+  .error .right {
+    position: absolute;
+    height: 100%;
+    padding: 45px 0 0;
+  }
+  .error_content {
+    padding: 0;
+  }
+  .error_title {
+    font: 5rem/6rem "Roboto-Bold";
+  }
 }

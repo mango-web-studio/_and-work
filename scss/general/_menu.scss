@@ -6,10 +6,13 @@
     width: 50%;
     background-color: $white_1;
     z-index: 10;
+    opacity: 0;
+    // visibility: hidden;
+    pointer-events: none;
     transition: 0.5s;
 
     &_checkbox_input {
-            
+
         &:checked {
 
             & ~ .header {
@@ -26,14 +29,7 @@
             & ~ .menu {
                 opacity: 1;
                 visibility: visible;
-            }
-        }
-
-        &:not(:checked) {
-
-            & ~ .menu {
-                opacity: 0;
-                visibility: hidden;
+                pointer-events: all;
             }
         }
     }
@@ -58,6 +54,19 @@
             color: $red_1;
             text-decoration: underline;
         }
+
+        // for wordpress
+        a {
+            @include font(22px, 24px, 'Roboto-Light');
+
+            color: $black_1;
+
+            &:hover,
+            &_active {
+                color: $red_1;
+                text-decoration: underline;
+            }
+        }
     }
 
     &_social_link {
@@ -69,5 +78,14 @@
             color: $red_1;
             text-decoration: underline;
         }
+    }
+}
+
+
+// screen width <= 425px
+@media only screen and (max-width: 425px) {
+
+    .menu {
+        width: 100%;
     }
 }
