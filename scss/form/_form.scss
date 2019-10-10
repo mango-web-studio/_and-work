@@ -240,3 +240,68 @@
         }
     }
 }
+
+
+// screen width <= 1366px
+@media only screen and (max-width: 1366px) {
+
+    .form {
+
+        &_inner {
+
+            .select-selected {
+                @include font(16px, 18px, 'Roboto-Light');
+
+                padding: 5% 10%;
+            }
+
+            .select-items div {
+                @include font(16px, 18px, 'Roboto-Light');
+
+                padding: 5% 10%;
+            }
+        }
+
+        &_title {
+            @include font(16px, 20px, 'Roboto-Regular');
+        }
+
+        &_application {
+            padding: 2%;
+        }
+
+        &_content {
+
+            &_left {
+
+                .select-selected {
+                    @include font(16px, 20px, 'Roboto-Light');
+
+                    padding: 3%;
+                }
+
+                .select-items div {
+                    @include font(16px, 20px, 'Roboto-Light');
+
+                    padding: 3%;
+                }
+            }
+
+            &_right_inner {
+
+                .tarrif_input {
+                    @include font(16px, 20px, 'Roboto-Medium');
+
+                    padding: 2% 4%;
+                }
+            }
+        }
+
+        &_client_info {
+            @include font(16px, 20px, 'Roboto-Light');
+
+            padding: 3%;
+        }
+
+    }
+}

@@ -983,6 +983,39 @@ button {
   visibility: visible;
 }
 
+@media only screen and (max-width: 1366px) {
+  .meeting_room_container_description_item {
+    padding: 15% 0 10%;
+  }
+  .meeting_room_container_description_item:last-child {
+    padding-bottom: 15%;
+  }
+  .meeting_room_description_title {
+    font: 1.6rem/2rem "Roboto-Regular";
+    margin-bottom: 2.3%;
+  }
+  .meeting_room_description_paragraph {
+    font: 1.6rem/2rem "Roboto-Light";
+    margin-bottom: 2.3%;
+  }
+  .meeting_room_description_item {
+    font: 1.6rem/2rem "Roboto-Light";
+  }
+  .meeting_room_description_tarrif_plan .select-selected {
+    font: 1.6rem/2rem "Roboto-Light";
+    padding: 5% 10%;
+  }
+  .meeting_room_description_tarrif_plan .select-items {
+    font: 1.6rem/2rem "Roboto-Light";
+  }
+  .meeting_room_description_tarrif_plan .select-items div {
+    padding: 5% 10%;
+  }
+  .meeting_room_description_tarrif_plan .tarrif_input {
+    padding: 1.15% 2.3%;
+  }
+}
+
 @media only screen and (max-width: 425px) {
   .down_arrow_to_scroll {
     display: none;
@@ -1418,6 +1451,20 @@ button {
   mix-blend-mode: luminosity;
 }
 
+@media only screen and (max-width: 1366px) {
+  .contacts_content {
+    padding: 4%;
+  }
+  .contacts_title {
+    font: 1.8rem/2rem "Roboto-Bold";
+    margin-bottom: 3%;
+  }
+  .contacts_description {
+    font: 1.6rem/1.8rem "Roboto-Light";
+    margin-bottom: 5%;
+  }
+}
+
 @media only screen and (max-width: 425px) {
   .contacts {
     position: relative;
@@ -1675,6 +1722,39 @@ button {
   }
   .form_content_right .select-selected {
     width: 140px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .form_inner .select-selected {
+    font: 1.6rem/1.8rem "Roboto-Light";
+    padding: 5% 10%;
+  }
+  .form_inner .select-items div {
+    font: 1.6rem/1.8rem "Roboto-Light";
+    padding: 5% 10%;
+  }
+  .form_title {
+    font: 1.6rem/2rem "Roboto-Regular";
+  }
+  .form_application {
+    padding: 2%;
+  }
+  .form_content_left .select-selected {
+    font: 1.6rem/2rem "Roboto-Light";
+    padding: 3%;
+  }
+  .form_content_left .select-items div {
+    font: 1.6rem/2rem "Roboto-Light";
+    padding: 3%;
+  }
+  .form_content_right_inner .tarrif_input {
+    font: 1.6rem/2rem "Roboto-Medium";
+    padding: 2% 4%;
+  }
+  .form_client_info {
+    font: 1.6rem/2rem "Roboto-Light";
+    padding: 3%;
   }
 }
 

@@ -76,6 +76,29 @@
 }
 
 
+// screen width <= 1366px
+@media only screen and (max-width: 1366px) {
+
+    .contacts {
+
+        &_content {
+            padding: 4%;
+        }
+
+        &_title {
+            @include font(18px, 20px, 'Roboto-Bold');
+
+            margin-bottom: 3%;
+        }
+
+        &_description {
+            @include font(16px, 18px, 'Roboto-Light');
+
+            margin-bottom: 5%;
+        }
+    }
+}
+
 // screen width <= 425px
 @media only screen and (max-width: 425px) {
 

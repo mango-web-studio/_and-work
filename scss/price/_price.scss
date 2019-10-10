@@ -225,10 +225,66 @@
         opacity: 0;
         visibility: hidden;
         transition: 0.5s;
-        
+
         &:first-child {
             opacity: 1;
             visibility: visible;
+        }
+    }
+}
+
+
+// screen width <= 1366px
+@media only screen and (max-width: 1366px) {
+
+    .meeting_room {
+
+        &_container_description_item {
+            padding: 15% 0 10%;
+
+            &:last-child {
+                padding-bottom: 15%;
+            }
+        } 
+
+        &_description {
+
+            &_title {
+                @include font(16px, 20px, 'Roboto-Regular');
+
+                margin-bottom: 2.3%;
+            }
+
+            &_paragraph {
+                @include font(16px, 20px, 'Roboto-Light');
+
+                margin-bottom: 2.3%;
+            }
+
+            &_item {
+                @include font(16px, 20px, 'Roboto-Light');
+            }
+
+            &_tarrif_plan  {
+
+                .select-selected {
+                    @include font(16px, 20px, 'Roboto-Light');
+
+                    padding: 5% 10%;
+                }
+
+                .select-items {
+                    @include font(16px, 20px, 'Roboto-Light');
+
+                    div {
+                        padding: 5% 10%;
+                    }
+                }
+
+                .tarrif_input {
+                    padding: 1.15% 2.3%;
+                }
+            }
         }
     }
 }
