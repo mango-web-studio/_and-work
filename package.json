@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "gulp-sass": "^4.0.2",
-    "gulp-tinypng-compress": "^1.2.1"
+    "gulp-tinypng-compress": "^1.2.1",
+    "scroll-behavior-polyfill": "^2.0.13"
   },
   "description": ""
 }

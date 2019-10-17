@@ -156,6 +156,7 @@ window.onload = function() {
 /* To display the element with class name 'bottom_marquee_position' after scrolling */
     let bottomMarquee = document.querySelector('.bottom_position_marquee');
     let scrollingElem = document.querySelector('.scrolling_element');
+    scrollingElem.style.scrollBehavior = "smooth";
     if (scrollingElem) {
         scrollingElem.addEventListener('scroll', function () {
             if (bottomMarquee) {
